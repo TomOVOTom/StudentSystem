@@ -1,0 +1,19 @@
+student_management.client - 包含客户端相关的类。
+student_management.server - 包含服务器相关的类。
+student_management.model - 包含数据模型相关的类。
+student_management.ui - 包含用户界面相关的类。
+
+
+student_management.ui - 包含主界面类 StudentSystem。
+student_management.ui.panel - 包含面板相关的类，如 InputPanel 和 ButtonPanel。
+student_management.ui.button - 包含按钮相关的类，如 AddCourseButton、QueryCourseButton 等。
+
+
+student_management.ui.button - 包含通用的按钮处理类，如 ButtonHandler。
+
+student_management.ui.button.student - 包含与学生相关的按钮类，
+如 AddStudentButton、RemoveStudentButton、UpdateStudentButton。
+
+student_management.ui.button.course - 包含与课程相关的按钮类，
+如 AddCourseButton、RemoveCourseButton、UpdateCourseButton、QueryCourseButton。
+

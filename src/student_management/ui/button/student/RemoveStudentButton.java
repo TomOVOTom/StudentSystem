@@ -1,33 +1,34 @@
-package student_management;
+package student_management.ui.button.student;
+
+import student_management.client.StudentClient;
+import student_management.ui.StudentSystem;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class QueryCourseButton {
+public class RemoveStudentButton {
     private StudentClient studentClient;
     private JTextField idField;
-    private JTextField courseField;
     private StudentSystem studentSystem;
 
-    public QueryCourseButton(StudentClient studentClient, JTextField idField, JTextField courseField, StudentSystem studentSystem) {
+    public RemoveStudentButton(StudentClient studentClient, JTextField idField, StudentSystem studentSystem) {
         this.studentClient = studentClient;
         this.idField = idField;
-        this.courseField = courseField;
         this.studentSystem = studentSystem;
     }
 
     public JButton createButton() {
-        JButton queryCourseButton = new JButton("查询课程");
-        queryCourseButton.addActionListener(new ActionListener() {
+        JButton removeButton = new JButton("删除学生");
+        removeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
-                String course = courseField.getText();
-                String response = studentClient.sendCommand("QUERY_COURSE", id, course);
+                String response = studentClient.sendCommand("REMOVE_STUDENT", id);
                 JOptionPane.showMessageDialog(studentSystem, response);
+                studentSystem.updateDisplay();
             }
         });
-        return queryCourseButton;
+        return removeButton;
     }
 }

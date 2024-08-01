@@ -1,4 +1,8 @@
-package student_management;
+package student_management.ui;
+
+import student_management.client.StudentClient;
+import student_management.ui.panel.ButtonPanel;
+import student_management.ui.panel.InputPanel;
 
 import javax.swing.*;
 import java.awt.*;

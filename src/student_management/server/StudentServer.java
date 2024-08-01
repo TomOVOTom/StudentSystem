@@ -1,4 +1,7 @@
-package student_management;
+package student_management.server;
+
+import student_management.model.Student;
+import student_management.model.StudentManager;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

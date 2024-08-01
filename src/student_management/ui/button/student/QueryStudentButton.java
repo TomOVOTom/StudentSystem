@@ -1,16 +1,19 @@
-package student_management;
+package student_management.ui.button.student;
+
+import student_management.client.StudentClient;
+import student_management.ui.StudentSystem;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class QueryStudentButton {
-    private StudentManager studentManager;
+    private StudentClient studentClient;
     private JTextField idField;
     private StudentSystem studentSystem;
 
-    public QueryStudentButton(StudentManager studentManager, JTextField idField, StudentSystem studentSystem) {
-        this.studentManager = studentManager;
+    public QueryStudentButton(StudentClient studentClient, JTextField idField, StudentSystem studentSystem) {
+        this.studentClient = studentClient;
         this.idField = idField;
         this.studentSystem = studentSystem;
     }
@@ -21,7 +24,7 @@ public class QueryStudentButton {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
-                String result = studentManager.queryStudent(id);
+                String result = studentClient.sendCommand("QUERY_STUDENT", id);
                 JOptionPane.showMessageDialog(studentSystem, result);
             }
         });

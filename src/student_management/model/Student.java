@@ -1,4 +1,4 @@
-package student_management;
+package student_management.model;
 
 import java.io.Serializable;
 import java.util.HashMap;

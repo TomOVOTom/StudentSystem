@@ -1,4 +1,4 @@
-package student_management;
+package student_management.client;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

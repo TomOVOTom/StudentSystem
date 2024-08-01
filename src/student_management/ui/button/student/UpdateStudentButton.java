@@ -1,17 +1,20 @@
-package student_management;
+package student_management.ui.button.student;
+
+import student_management.client.StudentClient;
+import student_management.ui.StudentSystem;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class UpdateButton {
+public class UpdateStudentButton {
     private StudentClient studentClient;
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
     private StudentSystem studentSystem;
 
-    public UpdateButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
+    public UpdateStudentButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
         this.studentClient = studentClient;
         this.idField = idField;
         this.nameField = nameField;

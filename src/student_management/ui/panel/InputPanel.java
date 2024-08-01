@@ -1,4 +1,4 @@
-package student_management;
+package student_management.ui.panel;
 
 import javax.swing.*;
 import java.awt.*;

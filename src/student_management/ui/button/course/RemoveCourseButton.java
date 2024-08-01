@@ -1,37 +1,37 @@
-package student_management;
+package student_management.ui.button.course;
+
+import student_management.client.StudentClient;
+import student_management.ui.StudentSystem;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class UpdateCourseButton {
+public class RemoveCourseButton {
     private StudentClient studentClient;
     private JTextField idField;
     private JTextField courseField;
-    private JTextField gradeField;
     private StudentSystem studentSystem;
 
-    public UpdateCourseButton(StudentClient studentClient, JTextField idField, JTextField courseField, JTextField gradeField, StudentSystem studentSystem) {
+    public RemoveCourseButton(StudentClient studentClient, JTextField idField, JTextField courseField, StudentSystem studentSystem) {
         this.studentClient = studentClient;
         this.idField = idField;
         this.courseField = courseField;
-        this.gradeField = gradeField;
         this.studentSystem = studentSystem;
     }
 
     public JButton createButton() {
-        JButton updateCourseButton = new JButton("修改课程");
-        updateCourseButton.addActionListener(new ActionListener() {
+        JButton removeCourseButton = new JButton("删除课程");
+        removeCourseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 String course = courseField.getText();
-                int grade = Integer.parseInt(gradeField.getText());
-                String response = studentClient.sendCommand("UPDATE_COURSE", id, course, grade);
+                String response = studentClient.sendCommand("REMOVE_COURSE", id, course);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }
         });
-        return updateCourseButton;
+        return removeCourseButton;
     }
 }

@@ -1,18 +1,22 @@
-package student_management;
+package student_management.ui.button.student;
+
+import student_management.client.StudentClient;
+import student_management.model.Student;
+import student_management.ui.StudentSystem;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddButton {
-    private StudentManager studentManager;
+public class AddStudentButton {
+    private StudentClient studentClient;
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
     private StudentSystem studentSystem;
 
-    public AddButton(StudentManager studentManager, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
-        this.studentManager = studentManager;
+    public AddStudentButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
+        this.studentClient = studentClient;
         this.idField = idField;
         this.nameField = nameField;
         this.ageField = ageField;
@@ -27,7 +31,9 @@ public class AddButton {
                 String id = idField.getText();
                 String name = nameField.getText();
                 int age = Integer.parseInt(ageField.getText());
-                studentManager.addStudent(new Student(id, name, age));
+                Student student = new Student(id, name, age);
+                String response = studentClient.sendCommand("ADD_STUDENT", student);
+                JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }
         });
