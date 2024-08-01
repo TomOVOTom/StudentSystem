@@ -50,12 +50,47 @@ public class StudentServer {
                 int age = (int) ois.readObject();
                 studentManager.updateStudent(id, name, age);
                 return "学生更新成功";
+            case "ADD_COURSE":
+                id = (String) ois.readObject();
+                String course = (String) ois.readObject();
+                int grade = (int) ois.readObject();
+                student = studentManager.getStudent(id);
+                if (student != null) {
+                    student.addCourse(course, grade);
+                    studentManager.saveToFile();
+                    return "课程添加成功";
+                } else {
+                    return "学生未找到";
+                }
+            case "REMOVE_COURSE":
+                id = (String) ois.readObject();
+                course = (String) ois.readObject();
+                student = studentManager.getStudent(id);
+                if (student != null) {
+                    student.removeCourse(course);
+                    studentManager.saveToFile();
+                    return "课程删除成功";
+                } else {
+                    return "学生未找到";
+                }
+            case "UPDATE_COURSE":
+                id = (String) ois.readObject();
+                course = (String) ois.readObject();
+                grade = (int) ois.readObject();
+                student = studentManager.getStudent(id);
+                if (student != null) {
+                    student.updateCourse(course, grade);
+                    studentManager.saveToFile();
+                    return "课程更新成功";
+                } else {
+                    return "学生未找到";
+                }
             case "QUERY_STUDENT":
                 id = (String) ois.readObject();
                 return studentManager.queryStudent(id);
             case "QUERY_COURSE":
                 id = (String) ois.readObject();
-                String course = (String) ois.readObject();
+                course = (String) ois.readObject();
                 return studentManager.queryCourse(id, course);
             case "QUERY_ALL_STUDENTS":
                 return queryAllStudents();
