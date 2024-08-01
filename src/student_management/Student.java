@@ -1,4 +1,4 @@
-package library_management;
+package student_management;
 
 import java.io.Serializable;
 import java.util.HashMap;

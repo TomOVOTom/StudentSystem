@@ -1,4 +1,4 @@
-package library_management;
+package student_management;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -7,12 +7,12 @@ import java.awt.event.ActionListener;
 public class RemoveButton {
     private StudentManager studentManager;
     private JTextField idField;
-    private LibrarySystem librarySystem;
+    private StudentSystem studentSystem;
 
-    public RemoveButton(StudentManager studentManager, JTextField idField, LibrarySystem librarySystem) {
+    public RemoveButton(StudentManager studentManager, JTextField idField, StudentSystem studentSystem) {
         this.studentManager = studentManager;
         this.idField = idField;
-        this.librarySystem = librarySystem;
+        this.studentSystem = studentSystem;
     }
 
     public JButton createButton() {
@@ -22,7 +22,7 @@ public class RemoveButton {
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 studentManager.removeStudent(id);
-                librarySystem.updateDisplay();
+                studentSystem.updateDisplay();
             }
         });
         return removeButton;

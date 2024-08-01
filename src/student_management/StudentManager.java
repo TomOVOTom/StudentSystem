@@ -1,4 +1,4 @@
-package library_management;
+package student_management;
 
 import java.io.*;
 import java.util.LinkedList;

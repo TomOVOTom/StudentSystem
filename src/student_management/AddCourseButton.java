@@ -1,37 +1,40 @@
-package library_management;
+package student_management;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RemoveCourseButton {
+public class AddCourseButton {
     private StudentManager studentManager;
     private JTextField idField;
     private JTextField courseField;
-    private LibrarySystem librarySystem;
+    private JTextField gradeField;
+    private StudentSystem studentSystem;
 
-    public RemoveCourseButton(StudentManager studentManager, JTextField idField, JTextField courseField, LibrarySystem librarySystem) {
+    public AddCourseButton(StudentManager studentManager, JTextField idField, JTextField courseField, JTextField gradeField, StudentSystem studentSystem) {
         this.studentManager = studentManager;
         this.idField = idField;
         this.courseField = courseField;
-        this.librarySystem = librarySystem;
+        this.gradeField = gradeField;
+        this.studentSystem = studentSystem;
     }
 
     public JButton createButton() {
-        JButton removeCourseButton = new JButton("删除课程");
-        removeCourseButton.addActionListener(new ActionListener() {
+        JButton addCourseButton = new JButton("添加课程");
+        addCourseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 String course = courseField.getText();
+                int grade = Integer.parseInt(gradeField.getText());
                 Student student = studentManager.getStudent(id);
                 if (student != null) {
-                    student.removeCourse(course);
+                    student.addCourse(course, grade);
                     studentManager.saveToFile();
-                    librarySystem.updateDisplay();
+                    studentSystem.updateDisplay();
                 }
             }
         });
-        return removeCourseButton;
+        return addCourseButton;
     }
 }

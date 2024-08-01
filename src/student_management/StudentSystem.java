@@ -1,13 +1,13 @@
-package library_management;
+package student_management;
 
 import javax.swing.*;
 import java.awt.*;
 
-public class LibrarySystem extends JFrame {
+public class StudentSystem extends JFrame {
     private StudentManager studentManager;
     private JTextArea displayArea;
 
-    public LibrarySystem() {
+    public StudentSystem() {
         studentManager = new StudentManager();
         initComponents();
     }
@@ -40,7 +40,7 @@ public class LibrarySystem extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            new LibrarySystem().setVisible(true);
+            new StudentSystem().setVisible(true);
         });
     }
 }

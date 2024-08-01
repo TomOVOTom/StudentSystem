@@ -1,36 +1,36 @@
-package library_management;
+package student_management;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AddButton {
+public class UpdateButton {
     private StudentManager studentManager;
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
-    private LibrarySystem librarySystem;
+    private StudentSystem studentSystem;
 
-    public AddButton(StudentManager studentManager, JTextField idField, JTextField nameField, JTextField ageField, LibrarySystem librarySystem) {
+    public UpdateButton(StudentManager studentManager, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
         this.studentManager = studentManager;
         this.idField = idField;
         this.nameField = nameField;
         this.ageField = ageField;
-        this.librarySystem = librarySystem;
+        this.studentSystem = studentSystem;
     }
 
     public JButton createButton() {
-        JButton addButton = new JButton("添加学生");
-        addButton.addActionListener(new ActionListener() {
+        JButton updateButton = new JButton("修改学生");
+        updateButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 String name = nameField.getText();
                 int age = Integer.parseInt(ageField.getText());
-                studentManager.addStudent(new Student(id, name, age));
-                librarySystem.updateDisplay();
+                studentManager.updateStudent(id, name, age);
+                studentSystem.updateDisplay();
             }
         });
-        return addButton;
+        return updateButton;
     }
 }
