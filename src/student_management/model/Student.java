@@ -43,6 +43,14 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        return "Student{id='" + id + "', name='" + name + "', age=" + age + ", courses=" + courses + "}";
+        StringBuilder sb = new StringBuilder();
+        sb.append("学号: ").append(id)
+          .append(", 姓名: ").append(name)
+          .append(", 年龄: ").append(age)
+          .append(", 课程: ");
+        for (Map.Entry<String, Integer> entry : courses.entrySet()) {
+            sb.append(entry.getKey()).append(" (成绩: ").append(entry.getValue()).append("), ");
+        }
+        return sb.toString();
     }
 }
