@@ -61,4 +61,18 @@ public class StudentManager {
             e.printStackTrace();
         }
     }
+
+    public String queryStudent(String id) {
+        Student student = getStudent(id);
+        return student != null ? student.toString() : "学生未找到";
+    }
+
+    public String queryCourse(String id, String course) {
+        Student student = getStudent(id);
+        if (student != null) {
+            Integer grade = student.getCourses().get(course);
+            return grade != null ? "课程: " + course + ", 成绩: " + grade : "课程未找到";
+        }
+        return "学生未找到";
+    }
 }

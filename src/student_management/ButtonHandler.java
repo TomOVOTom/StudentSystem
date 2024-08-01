@@ -3,7 +3,7 @@ package student_management;
 import javax.swing.*;
 
 public class ButtonHandler {
-    private StudentManager studentManager;
+    private StudentClient studentClient;
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
@@ -11,8 +11,8 @@ public class ButtonHandler {
     private JTextField gradeField;
     private StudentSystem studentSystem;
 
-    public ButtonHandler(StudentManager studentManager, JTextField idField, JTextField nameField, JTextField ageField, JTextField courseField, JTextField gradeField, StudentSystem studentSystem) {
-        this.studentManager = studentManager;
+    public ButtonHandler(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, JTextField courseField, JTextField gradeField, StudentSystem studentSystem) {
+        this.studentClient = studentClient;
         this.idField = idField;
         this.nameField = nameField;
         this.ageField = ageField;
@@ -22,26 +22,57 @@ public class ButtonHandler {
     }
 
     public JButton createAddButton() {
-        return new AddButton(studentManager, idField, nameField, ageField, studentSystem).createButton();
+        JButton addButton = new JButton("添加学生");
+        addButton.addActionListener(e -> {
+            String id = idField.getText();
+            String name = nameField.getText();
+            int age = Integer.parseInt(ageField.getText());
+            Student student = new Student(id, name, age);
+            String response = studentClient.sendCommand("ADD_STUDENT", student);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return addButton;
     }
 
     public JButton createRemoveButton() {
-        return new RemoveButton(studentManager, idField, studentSystem).createButton();
+        JButton removeButton = new JButton("删除学生");
+        removeButton.addActionListener(e -> {
+            String id = idField.getText();
+            String response = studentClient.sendCommand("REMOVE_STUDENT", id);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return removeButton;
     }
 
     public JButton createUpdateButton() {
-        return new UpdateButton(studentManager, idField, nameField, ageField, studentSystem).createButton();
+        return new UpdateButton(studentClient, idField, nameField, ageField, studentSystem).createButton();
     }
 
     public JButton createAddCourseButton() {
-        return new AddCourseButton(studentManager, idField, courseField, gradeField, studentSystem).createButton();
+        return new AddCourseButton(studentClient, idField, courseField, gradeField, studentSystem).createButton();
     }
 
     public JButton createRemoveCourseButton() {
-        return new RemoveCourseButton(studentManager, idField, courseField, studentSystem).createButton();
+        return new RemoveCourseButton(studentClient, idField, courseField, studentSystem).createButton();
     }
 
     public JButton createUpdateCourseButton() {
-        return new UpdateCourseButton(studentManager, idField, courseField, gradeField, studentSystem).createButton();
+        return new UpdateCourseButton(studentClient, idField, courseField, gradeField, studentSystem).createButton();
+    }
+
+    public JButton createQueryStudentButton() {
+        JButton queryStudentButton = new JButton("查询学生");
+        queryStudentButton.addActionListener(e -> {
+            String id = idField.getText();
+            String response = studentClient.sendCommand("QUERY_STUDENT", id);
+            JOptionPane.showMessageDialog(studentSystem, response);
+        });
+        return queryStudentButton;
+    }
+
+    public JButton createQueryCourseButton() {
+        return new QueryCourseButton(studentClient, idField, courseField, studentSystem).createButton();
     }
 }

@@ -4,11 +4,11 @@ import javax.swing.*;
 import java.awt.*;
 
 public class StudentSystem extends JFrame {
-    private StudentManager studentManager;
+    private StudentClient studentClient;
     private JTextArea displayArea;
 
     public StudentSystem() {
-        studentManager = new StudentManager();
+        studentClient = new StudentClient("localhost", 12345);
         initComponents();
     }
 
@@ -25,17 +25,14 @@ public class StudentSystem extends JFrame {
         InputPanel inputPanel = new InputPanel();
         add(inputPanel.getPanel(), BorderLayout.NORTH);
 
-        ButtonPanel buttonPanel = new ButtonPanel(studentManager, inputPanel, this);
+        ButtonPanel buttonPanel = new ButtonPanel(studentClient, inputPanel, this);
         add(buttonPanel.getPanel(), BorderLayout.SOUTH);
 
         updateDisplay();
     }
 
     public void updateDisplay() {
-        displayArea.setText("");
-        for (Student student : studentManager.getStudents()) {
-            displayArea.append(student.toString() + "\n");
-        }
+        displayArea.setText(studentClient.sendCommand("QUERY_ALL_STUDENTS"));
     }
 
     public static void main(String[] args) {

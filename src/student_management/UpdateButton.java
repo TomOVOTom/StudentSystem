@@ -5,14 +5,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class UpdateButton {
-    private StudentManager studentManager;
+    private StudentClient studentClient;
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
     private StudentSystem studentSystem;
 
-    public UpdateButton(StudentManager studentManager, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
-        this.studentManager = studentManager;
+    public UpdateButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
+        this.studentClient = studentClient;
         this.idField = idField;
         this.nameField = nameField;
         this.ageField = ageField;
@@ -27,7 +27,8 @@ public class UpdateButton {
                 String id = idField.getText();
                 String name = nameField.getText();
                 int age = Integer.parseInt(ageField.getText());
-                studentManager.updateStudent(id, name, age);
+                String response = studentClient.sendCommand("UPDATE_STUDENT", id, name, age);
+                JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }
         });
