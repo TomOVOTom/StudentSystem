@@ -1,5 +1,6 @@
 package student_management.model;
 
+import student_management.util.LoggerUtil;
 import student_management.util.TeacherExcelUtil;
 
 import java.util.HashMap;
@@ -16,11 +17,13 @@ public class TeacherManager {
     public void addTeacher(Teacher teacher) {
         teachers.put(teacher.getId(), teacher);
         saveTeachersToFile();
+        LoggerUtil.log("添加老师: " + teacher.toString());
     }
 
     public void removeTeacher(String id) {
         teachers.remove(id);
         saveTeachersToFile();
+        LoggerUtil.log("删除老师: " + id);
     }
 
     public void updateTeacher(String id, String name, String subject) {
@@ -29,6 +32,7 @@ public class TeacherManager {
             teacher.setName(name);
             teacher.setSubject(subject);
             saveTeachersToFile();
+            LoggerUtil.log("更新老师: " + id);
         }
     }
 

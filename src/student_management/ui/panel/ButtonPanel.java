@@ -59,23 +59,40 @@ public class ButtonPanel {
             studentSystem
         );
 
+        // 添加学生相关按钮
         panel.add(studentButtonHandler.createAddStudentButton());
         panel.add(studentButtonHandler.createRemoveStudentButton());
         panel.add(studentButtonHandler.createUpdateStudentButton());
+        panel.add(studentButtonHandler.createQueryStudentButton());
+        panel.add(studentButtonHandler.createClearStudentFieldsButton());
+
+        // 添加课程相关按钮
         panel.add(courseButtonHandler.createAddCourseButton());
         panel.add(courseButtonHandler.createRemoveCourseButton());
         panel.add(courseButtonHandler.createUpdateCourseButton());
-        panel.add(studentButtonHandler.createQueryStudentButton());
         panel.add(courseButtonHandler.createQueryCourseButton());
+        panel.add(courseButtonHandler.createClearCourseFieldsButton());
+
+        // 添加老师相关按钮
         panel.add(teacherButtonHandler.createAddTeacherButton());
         panel.add(teacherButtonHandler.createRemoveTeacherButton());
         panel.add(teacherButtonHandler.createUpdateTeacherButton());
         panel.add(teacherButtonHandler.createQueryTeacherButton());
+        panel.add(teacherButtonHandler.createClearTeacherFieldsButton());
+
+        // 添加班级相关按钮
         panel.add(classButtonHandler.createAddStudentClassButton());
+        panel.add(classButtonHandler.createRemoveStudentClassButton());
+        panel.add(classButtonHandler.createUpdateStudentClassButton());
+        panel.add(classButtonHandler.createQueryStudentClassButton());
+        panel.add(classButtonHandler.createClearStudentClassFieldsButton());
+
+        // 添加院系相关按钮
         panel.add(departmentButtonHandler.createAddDepartmentButton());
-        panel.add(studentButtonHandler.createClearStudentFieldsButton()); // 添加清空学生输入框按钮
-        panel.add(courseButtonHandler.createClearCourseFieldsButton()); // 添加清空课程输入框按钮
-        panel.add(teacherButtonHandler.createClearTeacherFieldsButton()); // 添加清空老师输入框按钮
+        panel.add(departmentButtonHandler.createRemoveDepartmentButton());
+        panel.add(departmentButtonHandler.createUpdateDepartmentButton());
+        panel.add(departmentButtonHandler.createQueryDepartmentButton());
+        panel.add(departmentButtonHandler.createClearDepartmentFieldsButton());
     }
 
     public JPanel getPanel() {

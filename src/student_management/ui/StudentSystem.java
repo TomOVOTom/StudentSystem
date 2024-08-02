@@ -18,7 +18,7 @@ public class StudentSystem extends JFrame {
 
     private void initComponents() {
         setTitle("学生管理系统");
-        setSize(600, 800);
+        setSize(700, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 

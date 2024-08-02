@@ -1,5 +1,6 @@
 package student_management.model;
 
+import student_management.util.LoggerUtil;
 import student_management.util.StudentExcelUtil;
 
 import java.util.LinkedList;
@@ -15,11 +16,13 @@ public class StudentManager {
     public void addStudent(Student student) {
         students.add(student);
         saveStudentsToFile();
+        LoggerUtil.log("添加学生: " + student.toString());
     }
 
     public void removeStudent(String id) {
         students.removeIf(student -> student.getId().equals(id));
         saveStudentsToFile();
+        LoggerUtil.log("删除学生: " + id);
     }
 
     public void updateStudent(String id, String name, int age) {
@@ -31,6 +34,7 @@ public class StudentManager {
             }
         }
         saveStudentsToFile();
+        LoggerUtil.log("更新学生: " + id);
     }
 
     public Student getStudent(String id) {
