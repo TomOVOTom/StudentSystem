@@ -3,6 +3,7 @@ package student_management.ui.button.student;
 import student_management.client.StudentClient;
 import student_management.model.Student;
 import student_management.ui.StudentSystem;
+import student_management.util.LoggerUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -35,6 +36,7 @@ public class AddStudentButton {
                 String response = studentClient.sendCommand("STUDENT_ADD_STUDENT", student);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
+                LoggerUtil.log("添加学生: " + student.toString());
             }
         });
         return addButton;

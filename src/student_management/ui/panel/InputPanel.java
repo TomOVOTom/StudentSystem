@@ -8,6 +8,8 @@ public class InputPanel {
     private StudentInputPanel studentInputPanel;
     private CourseInputPanel courseInputPanel;
     private TeacherInputPanel teacherInputPanel;
+    private StudentClassInputPanel studentClassInputPanel;
+    private DepartmentInputPanel departmentInputPanel;
 
     public InputPanel() {
         panel = new JPanel();
@@ -19,6 +21,8 @@ public class InputPanel {
         studentInputPanel = new StudentInputPanel();
         courseInputPanel = new CourseInputPanel();
         teacherInputPanel = new TeacherInputPanel();
+        studentClassInputPanel = new StudentClassInputPanel();
+        departmentInputPanel = new DepartmentInputPanel();
 
         gbc.gridx = 0;
         gbc.gridy = 0;
@@ -30,6 +34,12 @@ public class InputPanel {
 
         gbc.gridy = 2;
         panel.add(teacherInputPanel.getPanel(), gbc);
+
+        gbc.gridy = 3;
+        panel.add(studentClassInputPanel.getPanel(), gbc);
+
+        gbc.gridy = 4;
+        panel.add(departmentInputPanel.getPanel(), gbc);
     }
 
     public JPanel getPanel() {
@@ -74,5 +84,25 @@ public class InputPanel {
 
     public JTextField getTeacherSubjectField() {
         return teacherInputPanel.getTeacherSubjectField();
+    }
+
+    public JTextField getClassIdField() {
+        return studentClassInputPanel.getClassIdField();
+    }
+
+    public JTextField getClassNameField() {
+        return studentClassInputPanel.getClassNameField();
+    }
+
+    public JTextField getDepartmentField() {
+        return studentClassInputPanel.getDepartmentField();
+    }
+
+    public JTextField getDepartmentIdField() {
+        return departmentInputPanel.getDepartmentIdField();
+    }
+
+    public JTextField getDepartmentNameField() {
+        return departmentInputPanel.getDepartmentNameField();
     }
 }

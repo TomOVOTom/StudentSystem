@@ -1,5 +1,7 @@
 package student_management.server;
 
+import student_management.model.DepartmentManager;
+import student_management.model.StudentClassManager;
 import student_management.model.StudentManager;
 import student_management.model.TeacherManager;
 
@@ -12,14 +14,20 @@ import java.net.Socket;
 public class StudentServer {
     private StudentManager studentManager;
     private TeacherManager teacherManager;
+    private StudentClassManager studentClassManager;
+    private DepartmentManager departmentManager;
     private CommandHandler commandHandler;
 
     public StudentServer() {
         studentManager = new StudentManager();
         teacherManager = new TeacherManager();
+        studentClassManager = new StudentClassManager();
+        departmentManager = new DepartmentManager();
         StudentCommandHandler studentCommandHandler = new StudentCommandHandler(studentManager);
         TeacherCommandHandler teacherCommandHandler = new TeacherCommandHandler(teacherManager);
-        commandHandler = new CommandHandler(studentCommandHandler, teacherCommandHandler);
+        StudentClassCommandHandler studentClassCommandHandler = new StudentClassCommandHandler(studentClassManager);
+        DepartmentCommandHandler departmentCommandHandler = new DepartmentCommandHandler(departmentManager);
+        commandHandler = new CommandHandler(studentCommandHandler, teacherCommandHandler, studentClassCommandHandler, departmentCommandHandler);
     }
 
     public void startServer(int port) {
