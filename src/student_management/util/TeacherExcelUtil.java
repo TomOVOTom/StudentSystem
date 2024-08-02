@@ -35,10 +35,11 @@ public class TeacherExcelUtil {
 
                 int rowNum = 1;
                 for (Teacher teacher : teachers.values()) {
-                    Row row = sheet.createRow(rowNum++);
+                    Row row = sheet.createRow(rowNum);
                     row.createCell(0).setCellValue(teacher.getId());
                     row.createCell(1).setCellValue(teacher.getName());
                     row.createCell(2).setCellValue(teacher.getSubject());
+                    rowNum++;
                 }
 
                 fileOut = FileUtil.openFileOutputStream(TEACHER_FILE_NAME);
