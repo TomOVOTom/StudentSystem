@@ -1,7 +1,7 @@
 package student_management.util;
 
-import student_management.model.Course;
-import student_management.model.Student;
+import student_management.model.entity.Course;
+import student_management.model.entity.Student;
 import student_management.util.excel.CellUtil;
 import student_management.util.excel.ExcelFileLoader;
 import student_management.util.excel.ExcelFileSaver;
@@ -13,12 +13,14 @@ public class StudentExcelUtil {
     private static final String STUDENT_FILE_NAME = "students.xlsx";
 
     public static void saveStudentsToFile(LinkedList<Student> students) {
-        String[] headers = {"学号", "姓名", "年龄", "课程编号", "课程名称", "教师", "成绩"};
+        String[] headers = {"学号", "姓名", "年龄", "班级", "院系", "课程编号", "课程名称", "教师", "成绩"};
         ExcelFileSaver.saveToFile(STUDENT_FILE_NAME, students, headers, (row, student) -> {
             int cellIndex = 0;
             row.createCell(cellIndex++).setCellValue(student.getId());
             row.createCell(cellIndex++).setCellValue(student.getName());
             row.createCell(cellIndex++).setCellValue(student.getAge());
+            row.createCell(cellIndex++).setCellValue(student.getClassId());
+            row.createCell(cellIndex++).setCellValue(student.getDepartmentId());
             for (Course course : student.getCourses().values()) {
                 row.createCell(cellIndex++).setCellValue(course.getCourseId());
                 row.createCell(cellIndex++).setCellValue(course.getCourseName());
@@ -33,11 +35,13 @@ public class StudentExcelUtil {
             String id = CellUtil.getCellValueAsString(row.getCell(0));
             String name = CellUtil.getCellValueAsString(row.getCell(1));
             int age = (int) CellUtil.getNumericCellValue(row.getCell(2));
-            Student student = new Student(id, name, age);
-            String courseId = CellUtil.getCellValueAsString(row.getCell(3));
-            String courseName = CellUtil.getCellValueAsString(row.getCell(4));
-            String teacher = CellUtil.getCellValueAsString(row.getCell(5));
-            int grade = (int) CellUtil.getNumericCellValue(row.getCell(6));
+            String classId = CellUtil.getCellValueAsString(row.getCell(3));
+            String departmentId = CellUtil.getCellValueAsString(row.getCell(4));
+            Student student = new Student(id, name, age, classId, departmentId);
+            String courseId = CellUtil.getCellValueAsString(row.getCell(5));
+            String courseName = CellUtil.getCellValueAsString(row.getCell(6));
+            String teacher = CellUtil.getCellValueAsString(row.getCell(7));
+            int grade = (int) CellUtil.getNumericCellValue(row.getCell(8));
             student.addCourse(courseId, courseName, teacher, grade);
             return student;
         }, Student::getId);

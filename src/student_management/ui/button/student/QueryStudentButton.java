@@ -19,15 +19,15 @@ public class QueryStudentButton {
     }
 
     public JButton createButton() {
-        JButton queryStudentButton = new JButton("查询学生");
-        queryStudentButton.addActionListener(new ActionListener() {
+        JButton queryButton = new JButton("查询学生");
+        queryButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
-                String result = studentClient.sendCommand("STUDENT_QUERY_STUDENT", id);
-                JOptionPane.showMessageDialog(studentSystem, result);
+                String response = studentClient.sendCommand("STUDENT_QUERY_STUDENT", id);
+                JOptionPane.showMessageDialog(studentSystem, response);
             }
         });
-        return queryStudentButton;
+        return queryButton;
     }
 }

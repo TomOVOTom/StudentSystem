@@ -1,9 +1,8 @@
 package student_management.ui.button.student_class;
 
 import student_management.client.StudentClient;
-import student_management.model.StudentClass;
+import student_management.model.entity.StudentClass;
 import student_management.ui.StudentSystem;
-import student_management.util.LoggerUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -36,7 +35,6 @@ public class UpdateStudentClassButton {
                 String response = studentClient.sendCommand("CLASS_UPDATE_CLASS", updatedClass);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
-                LoggerUtil.log("更新班级: " + updatedClass.toString());
             }
         });
         return updateClassButton;

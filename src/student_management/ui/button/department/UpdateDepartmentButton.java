@@ -1,9 +1,8 @@
 package student_management.ui.button.department;
 
 import student_management.client.StudentClient;
-import student_management.model.Department;
+import student_management.model.entity.Department;
 import student_management.ui.StudentSystem;
-import student_management.util.LoggerUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -33,7 +32,6 @@ public class UpdateDepartmentButton {
                 String response = studentClient.sendCommand("DEPARTMENT_UPDATE_DEPARTMENT", updatedDepartment);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
-                LoggerUtil.log("更新院系: " + updatedDepartment.toString());
             }
         });
         return updateDepartmentButton;

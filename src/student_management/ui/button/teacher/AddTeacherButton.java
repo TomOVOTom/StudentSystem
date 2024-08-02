@@ -1,7 +1,7 @@
 package student_management.ui.button.teacher;
 
 import student_management.client.StudentClient;
-import student_management.model.Teacher;
+import student_management.model.entity.Teacher;
 import student_management.ui.StudentSystem;
 
 import javax.swing.*;

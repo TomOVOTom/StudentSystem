@@ -2,7 +2,6 @@ package student_management.ui.button.student_class;
 
 import student_management.client.StudentClient;
 import student_management.ui.StudentSystem;
-import student_management.util.LoggerUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -27,7 +26,6 @@ public class QueryStudentClassButton {
                 String classId = classIdField.getText();
                 String result = studentClient.sendCommand("CLASS_QUERY_CLASS", classId);
                 JOptionPane.showMessageDialog(studentSystem, result);
-                LoggerUtil.log("查询班级: " + classId);
             }
         });
         return queryClassButton;

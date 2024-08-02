@@ -1,6 +1,6 @@
 package student_management.util;
 
-import student_management.model.Teacher;
+import student_management.model.entity.Teacher;
 import student_management.util.excel.CellUtil;
 import student_management.util.excel.ExcelFileLoader;
 import student_management.util.excel.ExcelFileSaver;

@@ -1,6 +1,7 @@
 package student_management.ui;
 
 import student_management.client.StudentClient;
+import student_management.model.entity.User;
 import student_management.ui.panel.ButtonPanel;
 import student_management.ui.panel.InputPanel;
 
@@ -10,13 +11,17 @@ import java.awt.*;
 public class StudentSystem extends JFrame {
     private StudentClient studentClient;
     private JTextArea displayArea;
+    private User user;
 
-    public StudentSystem() {
-        studentClient = new StudentClient("localhost", 12345);
+    public StudentSystem(User user) {
+        System.out.println("创建 StudentSystem 实例，用户：" + user.getUsername());
+        this.studentClient = new StudentClient("localhost", 12345);
+        this.user = user;
         initComponents();
     }
 
     private void initComponents() {
+        System.out.println("初始化组件");
         setTitle("学生管理系统");
         setSize(700, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -29,19 +34,32 @@ public class StudentSystem extends JFrame {
         InputPanel inputPanel = new InputPanel();
         add(inputPanel.getPanel(), BorderLayout.NORTH);
 
-        ButtonPanel buttonPanel = new ButtonPanel(studentClient, inputPanel, this);
+        ButtonPanel buttonPanel = new ButtonPanel(studentClient, inputPanel, this, user);
         add(buttonPanel.getPanel(), BorderLayout.SOUTH);
 
         updateDisplay();
+        System.out.println("组件初始化完成");
     }
 
     public void updateDisplay() {
-        displayArea.setText(studentClient.sendCommand("STUDENT_QUERY_ALL_STUDENTS"));
+        System.out.println("更新显示");
+        String result = studentClient.sendCommand("STUDENT_QUERY_ALL_STUDENTS", user);
+        System.out.println("查询结果：" + result);
+        displayArea.setText(result);
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            new StudentSystem().setVisible(true);
+            LoginDialog loginDialog = new LoginDialog(null);
+            loginDialog.setVisible(true);
+            User user = loginDialog.getUser();
+            if (user != null) {
+                System.out.println("用户登录成功，创建 StudentSystem");
+                new StudentSystem(user).setVisible(true);
+            } else {
+                System.out.println("用户登录失败，退出程序");
+                System.exit(0);
+            }
         });
     }
 }

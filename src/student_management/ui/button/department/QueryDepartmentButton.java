@@ -2,7 +2,6 @@ package student_management.ui.button.department;
 
 import student_management.client.StudentClient;
 import student_management.ui.StudentSystem;
-import student_management.util.LoggerUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -27,7 +26,6 @@ public class QueryDepartmentButton {
                 String departmentId = departmentIdField.getText();
                 String result = studentClient.sendCommand("DEPARTMENT_QUERY_DEPARTMENT", departmentId);
                 JOptionPane.showMessageDialog(studentSystem, result);
-                LoggerUtil.log("查询院系: " + departmentId);
             }
         });
         return queryDepartmentButton;

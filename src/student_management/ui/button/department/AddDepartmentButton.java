@@ -1,9 +1,8 @@
 package student_management.ui.button.department;
 
 import student_management.client.StudentClient;
-import student_management.model.Department;
+import student_management.model.entity.Department;
 import student_management.ui.StudentSystem;
-import student_management.util.LoggerUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -33,7 +32,6 @@ public class AddDepartmentButton {
                 String response = studentClient.sendCommand("DEPARTMENT_ADD_DEPARTMENT", newDepartment);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
-                LoggerUtil.log("添加院系: " + newDepartment.toString());
             }
         });
         return addDepartmentButton;

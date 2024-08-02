@@ -1,9 +1,9 @@
 package student_management.ui.button.student;
 
 import student_management.client.StudentClient;
-import student_management.model.Student;
+import student_management.model.entity.Student;
+import student_management.model.entity.User;
 import student_management.ui.StudentSystem;
-import student_management.util.LoggerUtil;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -14,14 +14,20 @@ public class AddStudentButton {
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
+    private JTextField classIdField;
+    private JTextField departmentIdField;
     private StudentSystem studentSystem;
+    private User user;
 
-    public AddStudentButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
+    public AddStudentButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, JTextField classIdField, JTextField departmentIdField, StudentSystem studentSystem, User user) {
         this.studentClient = studentClient;
         this.idField = idField;
         this.nameField = nameField;
         this.ageField = ageField;
+        this.classIdField = classIdField;
+        this.departmentIdField = departmentIdField;
         this.studentSystem = studentSystem;
+        this.user = user;
     }
 
     public JButton createButton() {
@@ -32,11 +38,12 @@ public class AddStudentButton {
                 String id = idField.getText();
                 String name = nameField.getText();
                 int age = Integer.parseInt(ageField.getText());
-                Student student = new Student(id, name, age);
-                String response = studentClient.sendCommand("STUDENT_ADD_STUDENT", student);
+                String classId = classIdField.getText();
+                String departmentId = departmentIdField.getText();
+                Student student = new Student(id, name, age, classId, departmentId);
+                String response = studentClient.sendCommand("STUDENT_ADD_STUDENT", user, student);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
-                LoggerUtil.log("添加学生: " + student.toString());
             }
         });
         return addButton;

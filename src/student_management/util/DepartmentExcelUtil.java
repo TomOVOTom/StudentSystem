@@ -1,6 +1,6 @@
 package student_management.util;
 
-import student_management.model.Department;
+import student_management.model.entity.Department;
 import student_management.util.excel.CellUtil;
 import student_management.util.excel.ExcelFileLoader;
 import student_management.util.excel.ExcelFileSaver;

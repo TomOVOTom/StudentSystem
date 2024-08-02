@@ -1,7 +1,7 @@
 package student_management.server;
 
-import student_management.model.StudentClass;
-import student_management.model.StudentClassManager;
+import student_management.model.entity.StudentClass;
+import student_management.model.manager.StudentClassManager;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;

@@ -1,6 +1,7 @@
 package student_management.ui.panel;
 
 import student_management.client.StudentClient;
+import student_management.model.entity.User;
 import student_management.ui.StudentSystem;
 import student_management.ui.button.course.CourseButtonHandler;
 import student_management.ui.button.department.DepartmentButtonHandler;
@@ -14,7 +15,7 @@ import java.awt.*;
 public class ButtonPanel {
     private JPanel panel;
 
-    public ButtonPanel(StudentClient studentClient, InputPanel inputPanel, StudentSystem studentSystem) {
+    public ButtonPanel(StudentClient studentClient, InputPanel inputPanel, StudentSystem studentSystem, User user) {
         panel = new JPanel();
         panel.setLayout(new GridLayout(6, 3)); // 修改为6行3列
 
@@ -23,7 +24,10 @@ public class ButtonPanel {
             inputPanel.getIdField(),
             inputPanel.getNameField(),
             inputPanel.getAgeField(),
-            studentSystem
+            inputPanel.getClassIdField(),
+            inputPanel.getDepartmentIdField(),
+            studentSystem,
+            user
         );
 
         CourseButtonHandler courseButtonHandler = new CourseButtonHandler(
