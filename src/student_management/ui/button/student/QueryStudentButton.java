@@ -24,7 +24,7 @@ public class QueryStudentButton {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
-                String result = studentClient.sendCommand("QUERY_STUDENT", id);
+                String result = studentClient.sendCommand("STUDENT_QUERY_STUDENT", id);
                 JOptionPane.showMessageDialog(studentSystem, result);
             }
         });

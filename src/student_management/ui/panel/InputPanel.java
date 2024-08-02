@@ -5,11 +5,9 @@ import java.awt.*;
 
 public class InputPanel {
     private JPanel panel;
-    private JTextField idField;
-    private JTextField nameField;
-    private JTextField ageField;
-    private JTextField courseField;
-    private JTextField gradeField;
+    private StudentInputPanel studentInputPanel;
+    private CourseInputPanel courseInputPanel;
+    private TeacherInputPanel teacherInputPanel;
 
     public InputPanel() {
         panel = new JPanel();
@@ -18,50 +16,20 @@ public class InputPanel {
         gbc.insets = new Insets(5, 5, 5, 5);
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
-        idField = new JTextField(15);
-        nameField = new JTextField(15);
-        ageField = new JTextField(15);
-        courseField = new JTextField(15);
-        gradeField = new JTextField(15);
+        studentInputPanel = new StudentInputPanel();
+        courseInputPanel = new CourseInputPanel();
+        teacherInputPanel = new TeacherInputPanel();
 
         gbc.gridx = 0;
         gbc.gridy = 0;
-        panel.add(new JLabel("学号:"), gbc);
-        gbc.gridx = 1;
-        gbc.weightx = 1.0;
-        panel.add(idField, gbc);
+        gbc.gridwidth = 2;
+        panel.add(studentInputPanel.getPanel(), gbc);
 
-        gbc.gridx = 0;
         gbc.gridy = 1;
-        gbc.weightx = 0;
-        panel.add(new JLabel("姓名:"), gbc);
-        gbc.gridx = 1;
-        gbc.weightx = 1.0;
-        panel.add(nameField, gbc);
+        panel.add(courseInputPanel.getPanel(), gbc);
 
-        gbc.gridx = 0;
         gbc.gridy = 2;
-        gbc.weightx = 0;
-        panel.add(new JLabel("年龄:"), gbc);
-        gbc.gridx = 1;
-        gbc.weightx = 1.0;
-        panel.add(ageField, gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 3;
-        gbc.weightx = 0;
-        panel.add(new JLabel("课程:"), gbc);
-        gbc.gridx = 1;
-        gbc.weightx = 1.0;
-        panel.add(courseField, gbc);
-
-        gbc.gridx = 0;
-        gbc.gridy = 4;
-        gbc.weightx = 0;
-        panel.add(new JLabel("成绩:"), gbc);
-        gbc.gridx = 1;
-        gbc.weightx = 1.0;
-        panel.add(gradeField, gbc);
+        panel.add(teacherInputPanel.getPanel(), gbc);
     }
 
     public JPanel getPanel() {
@@ -69,22 +37,42 @@ public class InputPanel {
     }
 
     public JTextField getIdField() {
-        return idField;
+        return studentInputPanel.getIdField();
     }
 
     public JTextField getNameField() {
-        return nameField;
+        return studentInputPanel.getNameField();
     }
 
     public JTextField getAgeField() {
-        return ageField;
+        return studentInputPanel.getAgeField();
     }
 
-    public JTextField getCourseField() {
-        return courseField;
+    public JTextField getCourseIdField() {
+        return courseInputPanel.getCourseIdField();
+    }
+
+    public JTextField getCourseNameField() {
+        return courseInputPanel.getCourseNameField();
+    }
+
+    public JTextField getTeacherField() {
+        return courseInputPanel.getTeacherField();
     }
 
     public JTextField getGradeField() {
-        return gradeField;
+        return courseInputPanel.getGradeField();
+    }
+
+    public JTextField getTeacherIdField() {
+        return teacherInputPanel.getTeacherIdField();
+    }
+
+    public JTextField getTeacherNameField() {
+        return teacherInputPanel.getTeacherNameField();
+    }
+
+    public JTextField getTeacherSubjectField() {
+        return teacherInputPanel.getTeacherSubjectField();
     }
 }

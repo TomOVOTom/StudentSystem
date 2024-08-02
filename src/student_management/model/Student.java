@@ -5,10 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Student implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private String id;
     private String name;
     private int age;
-    private Map<String, Integer> courses; // 课程和成绩
+    private Map<String, Course> courses; // 课程和课程信息
 
     public Student(String id, String name, int age) {
         this.id = id;
@@ -27,18 +29,18 @@ public class Student implements Serializable {
     public int getAge() { return age; }
     public void setAge(int age) { this.age = age; }
 
-    public Map<String, Integer> getCourses() { return courses; }
+    public Map<String, Course> getCourses() { return courses; }
 
-    public void addCourse(String course, int grade) {
-        courses.put(course, grade);
+    public void addCourse(String courseId, String courseName, String teacher, int grade) {
+        courses.put(courseId, new Course(courseId, courseName, teacher, grade));
     }
 
-    public void removeCourse(String course) {
-        courses.remove(course);
+    public void removeCourse(String courseId) {
+        courses.remove(courseId);
     }
 
-    public void updateCourse(String course, int grade) {
-        courses.put(course, grade);
+    public void updateCourse(String courseId, String courseName, String teacher, int grade) {
+        courses.put(courseId, new Course(courseId, courseName, teacher, grade));
     }
 
     @Override
@@ -48,8 +50,8 @@ public class Student implements Serializable {
           .append(", 姓名: ").append(name)
           .append(", 年龄: ").append(age)
           .append(", 课程: ");
-        for (Map.Entry<String, Integer> entry : courses.entrySet()) {
-            sb.append(entry.getKey()).append(" (成绩: ").append(entry.getValue()).append("), ");
+        for (Course course : courses.values()) {
+            sb.append(course.toString()).append(", ");
         }
         return sb.toString();
     }

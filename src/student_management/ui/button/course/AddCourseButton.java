@@ -10,14 +10,18 @@ import java.awt.event.ActionListener;
 public class AddCourseButton {
     private StudentClient studentClient;
     private JTextField idField;
-    private JTextField courseField;
+    private JTextField courseIdField;
+    private JTextField courseNameField;
+    private JTextField teacherField;
     private JTextField gradeField;
     private StudentSystem studentSystem;
 
-    public AddCourseButton(StudentClient studentClient, JTextField idField, JTextField courseField, JTextField gradeField, StudentSystem studentSystem) {
+    public AddCourseButton(StudentClient studentClient, JTextField idField, JTextField courseIdField, JTextField courseNameField, JTextField teacherField, JTextField gradeField, StudentSystem studentSystem) {
         this.studentClient = studentClient;
         this.idField = idField;
-        this.courseField = courseField;
+        this.courseIdField = courseIdField;
+        this.courseNameField = courseNameField;
+        this.teacherField = teacherField;
         this.gradeField = gradeField;
         this.studentSystem = studentSystem;
     }
@@ -28,9 +32,11 @@ public class AddCourseButton {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
-                String course = courseField.getText();
+                String courseId = courseIdField.getText();
+                String courseName = courseNameField.getText();
+                String teacher = teacherField.getText();
                 int grade = Integer.parseInt(gradeField.getText());
-                String response = studentClient.sendCommand("ADD_COURSE", id, course, grade);
+                String response = studentClient.sendCommand("STUDENT_ADD_COURSE", id, courseId, courseName, teacher, grade);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }

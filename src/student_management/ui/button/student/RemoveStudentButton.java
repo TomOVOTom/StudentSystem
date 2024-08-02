@@ -24,7 +24,7 @@ public class RemoveStudentButton {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
-                String response = studentClient.sendCommand("REMOVE_STUDENT", id);
+                String response = studentClient.sendCommand("STUDENT_REMOVE_STUDENT", id);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }

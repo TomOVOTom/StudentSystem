@@ -19,14 +19,17 @@ public class StudentClient {
              ObjectOutputStream oos = new ObjectOutputStream(socket.getOutputStream());
              ObjectInputStream ois = new ObjectInputStream(socket.getInputStream())) {
 
+            System.out.println("Sending command: " + command);
             oos.writeObject(command);
             for (Object arg : args) {
                 oos.writeObject(arg);
             }
-            return (String) ois.readObject();
+            String response = (String) ois.readObject();
+            System.out.println("Received response: " + response);
+            return response;
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
-            return "通信错误";
+            return "通信错误: " + e.getMessage();
         }
     }
 }

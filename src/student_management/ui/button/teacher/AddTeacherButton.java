@@ -1,40 +1,42 @@
-package student_management.ui.button.student;
+package student_management.ui.button.teacher;
 
 import student_management.client.StudentClient;
+import student_management.model.Teacher;
 import student_management.ui.StudentSystem;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class UpdateStudentButton {
+public class AddTeacherButton {
     private StudentClient studentClient;
     private JTextField idField;
     private JTextField nameField;
-    private JTextField ageField;
+    private JTextField subjectField;
     private StudentSystem studentSystem;
 
-    public UpdateStudentButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, StudentSystem studentSystem) {
+    public AddTeacherButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField subjectField, StudentSystem studentSystem) {
         this.studentClient = studentClient;
         this.idField = idField;
         this.nameField = nameField;
-        this.ageField = ageField;
+        this.subjectField = subjectField;
         this.studentSystem = studentSystem;
     }
 
     public JButton createButton() {
-        JButton updateButton = new JButton("修改学生");
-        updateButton.addActionListener(new ActionListener() {
+        JButton addTeacherButton = new JButton("添加老师");
+        addTeacherButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 String name = nameField.getText();
-                int age = Integer.parseInt(ageField.getText());
-                String response = studentClient.sendCommand("STUDENT_UPDATE_STUDENT", id, name, age);
+                String subject = subjectField.getText();
+                Teacher teacher = new Teacher(id, name, subject);
+                String response = studentClient.sendCommand("TEACHER_ADD_TEACHER", teacher);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }
         });
-        return updateButton;
+        return addTeacherButton;
     }
 }

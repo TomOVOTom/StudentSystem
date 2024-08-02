@@ -18,7 +18,7 @@ public class StudentSystem extends JFrame {
 
     private void initComponents() {
         setTitle("学生管理系统");
-        setSize(600, 400);
+        setSize(600, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -36,7 +36,7 @@ public class StudentSystem extends JFrame {
     }
 
     public void updateDisplay() {
-        displayArea.setText(studentClient.sendCommand("QUERY_ALL_STUDENTS"));
+        displayArea.setText(studentClient.sendCommand("STUDENT_QUERY_ALL_STUDENTS"));
     }
 
     public static void main(String[] args) {

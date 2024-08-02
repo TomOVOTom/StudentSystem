@@ -32,7 +32,7 @@ public class AddStudentButton {
                 String name = nameField.getText();
                 int age = Integer.parseInt(ageField.getText());
                 Student student = new Student(id, name, age);
-                String response = studentClient.sendCommand("ADD_STUDENT", student);
+                String response = studentClient.sendCommand("STUDENT_ADD_STUDENT", student);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }

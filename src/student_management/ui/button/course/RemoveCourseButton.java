@@ -27,7 +27,7 @@ public class RemoveCourseButton {
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
                 String course = courseField.getText();
-                String response = studentClient.sendCommand("REMOVE_COURSE", id, course);
+                String response = studentClient.sendCommand("STUDENT_REMOVE_COURSE", id, course);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }
