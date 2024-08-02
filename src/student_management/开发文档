@@ -38,3 +38,34 @@ ps:通常，日志记录应该在业务逻辑层（如 Manager 类）中进行�
 7.界面优化：
 提升用户界面的美观性和易用性，使用更现代的UI框架。
 
+
+在 panel 包下的各个子包中放置以下内容：
+student_management.ui.panel.student:
+StudentPanel.java：包含学生管理的所有UI组件
+StudentInputPanel.java：学生信息输入面板
+StudentButtonPanel.java：学生管理相关按钮面板
+student_management.ui.panel.course:
+CoursePanel.java：包含课程管理的所有UI组件
+CourseInputPanel.java：课程信息输入面板
+CourseButtonPanel.java：课程管理相关按钮面板
+student_management.ui.panel.teacher:
+TeacherPanel.java：包含教师管理的所有UI组件
+TeacherInputPanel.java：教师信息输入面板
+TeacherButtonPanel.java：教师管理相关按钮面板
+4. student_management.ui.panel.student_class:
+StudentClassPanel.java：包含班级管理的所有UI组件
+StudentClassInputPanel.java：班级信息输入面板
+StudentClassButtonPanel.java：班级管理相关按钮面板
+student_management.ui.panel.department:
+DepartmentPanel.java：包含院系管理的所有UI组件
+DepartmentInputPanel.java：院系信息输入面板
+DepartmentButtonPanel.java：院系管理相关按钮面板
+student_management.ui.panel.grade:
+GradePanel.java：包含成绩管理的所有UI组件
+GradeInputPanel.java：成绩信息输入面板
+GradeButtonPanel.java：成绩管理相关按钮面板
+student_management.ui.panel.user:
+UserPanel.java：包含用户管理的所有UI组件
+UserInputPanel.java：用户信息输入面板
+UserButtonPanel.java：用户管理相关按钮面板
+每个 XXXPanel.java 文件应该包含该功能模块的所有UI组件，包括输入面板、按钮面板和显示结果的区域。
