@@ -31,14 +31,18 @@ public class AddCourseButton {
         addCourseButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String id = idField.getText();
-                String courseId = courseIdField.getText();
-                String courseName = courseNameField.getText();
-                String teacher = teacherField.getText();
-                int grade = Integer.parseInt(gradeField.getText());
-                String response = studentClient.sendCommand("STUDENT_ADD_COURSE", id, courseId, courseName, teacher, grade);
-                JOptionPane.showMessageDialog(studentSystem, response);
-                studentSystem.updateDisplay();
+                try {
+                    String id = idField.getText();
+                    String courseId = courseIdField.getText();
+                    String courseName = courseNameField.getText();
+                    String teacher = teacherField.getText();
+                    int grade = Integer.parseInt(gradeField.getText());
+                    String response = studentClient.sendCommand("STUDENT_ADD_COURSE", studentSystem.getUser(), id, courseId, courseName, teacher, grade);
+                    JOptionPane.showMessageDialog(studentSystem, response);
+                    studentSystem.updateDisplay();
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(studentSystem, "成绩必须是数字", "输入错误", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
         return addCourseButton;

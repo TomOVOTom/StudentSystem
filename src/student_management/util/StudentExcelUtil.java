@@ -42,7 +42,8 @@ public class StudentExcelUtil {
             String courseName = CellUtil.getCellValueAsString(row.getCell(6));
             String teacher = CellUtil.getCellValueAsString(row.getCell(7));
             int grade = (int) CellUtil.getNumericCellValue(row.getCell(8));
-            student.addCourse(courseId, courseName, teacher, grade);
+            Course course = new Course(courseId, courseName, teacher, grade);
+            student.addCourse(course);
             return student;
         }, Student::getId);
         return new LinkedList<>(studentsMap.values());

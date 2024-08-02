@@ -1,7 +1,6 @@
 package student_management.ui.button.student;
 
 import student_management.client.StudentClient;
-import student_management.model.entity.Student;
 import student_management.model.entity.User;
 import student_management.ui.StudentSystem;
 
@@ -31,21 +30,24 @@ public class AddStudentButton {
     }
 
     public JButton createButton() {
-        JButton addButton = new JButton("添加学生");
-        addButton.addActionListener(new ActionListener() {
+        JButton addStudentButton = new JButton("添加学生");
+        addStudentButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String id = idField.getText();
-                String name = nameField.getText();
-                int age = Integer.parseInt(ageField.getText());
-                String classId = classIdField.getText();
-                String departmentId = departmentIdField.getText();
-                Student student = new Student(id, name, age, classId, departmentId);
-                String response = studentClient.sendCommand("STUDENT_ADD_STUDENT", user, student);
-                JOptionPane.showMessageDialog(studentSystem, response);
-                studentSystem.updateDisplay();
+                try {
+                    String id = idField.getText();
+                    String name = nameField.getText();
+                    int age = Integer.parseInt(ageField.getText());
+                    String classId = classIdField.getText();
+                    String departmentId = departmentIdField.getText();
+                    String response = studentClient.sendCommand("STUDENT_ADD_STUDENT", user, id, name, age, classId, departmentId);
+                    JOptionPane.showMessageDialog(studentSystem, response);
+                    studentSystem.updateDisplay();
+                } catch (NumberFormatException ex) {
+                    JOptionPane.showMessageDialog(studentSystem, "年龄必须是数字", "输入错误", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
-        return addButton;
+        return addStudentButton;
     }
 }

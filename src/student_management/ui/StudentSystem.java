@@ -2,6 +2,7 @@ package student_management.ui;
 
 import student_management.client.StudentClient;
 import student_management.model.entity.User;
+import student_management.model.manager.UserManager;
 import student_management.ui.panel.ButtonPanel;
 import student_management.ui.panel.InputPanel;
 
@@ -43,23 +44,40 @@ public class StudentSystem extends JFrame {
 
     public void updateDisplay() {
         System.out.println("更新显示");
-        String result = studentClient.sendCommand("STUDENT_QUERY_ALL_STUDENTS", user);
-        System.out.println("查询结果：" + result);
-        displayArea.setText(result);
+        try {
+            String result = studentClient.sendCommand("STUDENT_QUERY_ALL_STUDENTS", user);
+            System.out.println("查询结果：" + result);
+            displayArea.setText(result);
+        } catch (Exception e) {
+            System.err.println("更新显示时出错: " + e.getMessage());
+            displayArea.setText("无法获取学生信息，请检查服务器连接。");
+        }
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            LoginDialog loginDialog = new LoginDialog(null);
-            loginDialog.setVisible(true);
-            User user = loginDialog.getUser();
-            if (user != null) {
-                System.out.println("用户登录成功，创建 StudentSystem");
-                new StudentSystem(user).setVisible(true);
-            } else {
-                System.out.println("用户登录失败，退出程序");
-                System.exit(0);
+            try {
+                UserManager userManager = new UserManager();
+                userManager.initializeDefaultUsers();
+                LoginDialog loginDialog = new LoginDialog(null);
+                loginDialog.setVisible(true);
+                User user = loginDialog.getUser();
+                if (user != null) {
+                    System.out.println("用户登录成功，创建 StudentSystem");
+                    new StudentSystem(user).setVisible(true);
+                } else {
+                    System.out.println("用户登录失败，退出程序");
+                    System.exit(0);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                JOptionPane.showMessageDialog(null, "程序初始化失败：" + e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
+                System.exit(1);
             }
         });
+    }
+
+    public User getUser() {
+        return this.user;
     }
 }

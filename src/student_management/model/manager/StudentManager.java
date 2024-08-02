@@ -81,6 +81,19 @@ public class StudentManager {
                 .orElse("学生未找到");
     }
 
+    public void addCourse(String studentId, String courseId, String courseName, String teacher, int grade, User user) {
+        if (!user.getRole().equals("admin")) {
+            throw new SecurityException("无权限操作");
+        }
+        getStudent(studentId).ifPresent(student -> {
+            Course course = new Course(courseId, courseName, teacher, grade);
+            student.addCourse(course);
+            saveStudentsToFile();
+            LoggerUtil.log("为学生 " + studentId + " 添加课程: " + course.toString());
+        });
+    }
+
+
     public String queryCourse(String id, String courseId) {
         return getStudent(id)
                 .map(student -> Optional.ofNullable(student.getCourses().get(courseId))

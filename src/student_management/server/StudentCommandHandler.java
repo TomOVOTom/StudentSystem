@@ -1,5 +1,6 @@
 package student_management.server;
 
+import student_management.model.entity.Course;
 import student_management.model.entity.Student;
 import student_management.model.entity.User;
 import student_management.model.manager.StudentManager;
@@ -16,11 +17,16 @@ public class StudentCommandHandler {
     }
 
     public String handleCommand(String command, ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        User user = (User) ois.readObject(); // 读取用户信息
         try {
+            User user = (User) ois.readObject();
             switch (command) {
                 case "STUDENT_ADD_STUDENT": {
-                    Student student = (Student) ois.readObject();
+                    String id = (String) ois.readObject();
+                    String name = (String) ois.readObject();
+                    int age = (int) ois.readObject();
+                    String classId = (String) ois.readObject();
+                    String departmentId = (String) ois.readObject();
+                    Student student = new Student(id, name, age, classId, departmentId);
                     studentManager.addStudent(student, user);
                     LoggerUtil.log("用户 " + user.getUsername() + " 添加了学生: " + student.getId());
                     return "学生添加成功";
@@ -40,6 +46,22 @@ public class StudentCommandHandler {
                     studentManager.updateStudent(id, name, age, classId, departmentId, user);
                     LoggerUtil.log("用户 " + user.getUsername() + " 更新了学生: " + id);
                     return "学生更新成功";
+                }
+                case "STUDENT_ADD_COURSE": {
+                    String id = (String) ois.readObject();
+                    String courseId = (String) ois.readObject();
+                    String courseName = (String) ois.readObject();
+                    String teacher = (String) ois.readObject();
+                    int grade = (int) ois.readObject();
+                    Student student = studentManager.getStudent(id).orElse(null);
+                    if (student != null) {
+                        student.addCourse(new Course(courseId, courseName, teacher, grade));
+                        studentManager.saveStudentsToFile();
+                        LoggerUtil.log("用户 " + user.getUsername() + " 为学生 " + id + " 添加了课程: " + courseId);
+                        return "课程添加成功";
+                    } else {
+                        return "学生未找到";
+                    }
                 }
                 case "STUDENT_REMOVE_COURSE": {
                     String id = (String) ois.readObject();
