@@ -1,10 +1,9 @@
 package student_management.model.manager;
 
-import student_management.model.entity.Course;
 import student_management.model.entity.Student;
 import student_management.model.entity.User;
-import student_management.util.LoggerUtil;
-import student_management.util.StudentExcelUtil;
+import student_management.util.commonutil.Logger;
+import student_management.util.excelutil.StudentExcelUtil;
 
 import java.util.LinkedList;
 import java.util.Optional;
@@ -12,9 +11,11 @@ import java.util.stream.Collectors;
 
 public class StudentManager {
     private LinkedList<Student> students;
+    private Logger logger;
 
-    public StudentManager() {
-        students = new LinkedList<>();
+    public StudentManager(Logger logger) {
+        this.students = new LinkedList<>();
+        this.logger = logger;
         loadStudentsFromFile();
     }
 
@@ -24,7 +25,7 @@ public class StudentManager {
         }
         students.add(student);
         saveStudentsToFile();
-        LoggerUtil.log("添加学生: " + student.toString());
+        logger.log("用户 " + user.getUsername() + " 添加学生: " + student.toString());
     }
 
     public void removeStudent(String id, User user) {
@@ -34,9 +35,9 @@ public class StudentManager {
         boolean removed = students.removeIf(student -> student.getId().equals(id));
         if (removed) {
             saveStudentsToFile();
-            LoggerUtil.log("删除学生: " + id);
+            logger.log("用户 " + user.getUsername() + " 删除学生: " + id);
         } else {
-            LoggerUtil.log("删除学生失败，未找到学生: " + id);
+            logger.log("用户 " + user.getUsername() + " 删除学生失败，未找到学生: " + id);
         }
     }
 
@@ -53,7 +54,7 @@ public class StudentManager {
                     student.setClassId(classId);
                     student.setDepartmentId(departmentId);
                     saveStudentsToFile();
-                    LoggerUtil.log("更新学生: " + id);
+                    logger.log("用户 " + user.getUsername() + " 更新学生: " + id);
                 });
     }
 
@@ -78,27 +79,6 @@ public class StudentManager {
     public String queryStudent(String id) {
         return getStudent(id)
                 .map(Student::toString)
-                .orElse("学生未找到");
-    }
-
-    public void addCourse(String studentId, String courseId, String courseName, String teacher, int grade, User user) {
-        if (!user.getRole().equals("admin")) {
-            throw new SecurityException("无权限操作");
-        }
-        getStudent(studentId).ifPresent(student -> {
-            Course course = new Course(courseId, courseName, teacher, grade);
-            student.addCourse(course);
-            saveStudentsToFile();
-            LoggerUtil.log("为学生 " + studentId + " 添加课程: " + course.toString());
-        });
-    }
-
-
-    public String queryCourse(String id, String courseId) {
-        return getStudent(id)
-                .map(student -> Optional.ofNullable(student.getCourses().get(courseId))
-                        .map(Course::toString)
-                        .orElse("课程未找到"))
                 .orElse("学生未找到");
     }
 

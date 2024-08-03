@@ -4,6 +4,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.channels.FileChannel;
@@ -26,7 +27,13 @@ public class ExcelFileLoader {
 
         while (retries < MAX_RETRIES) {
             try {
-                fileIn = new FileInputStream(fileName);
+                File file = new File(fileName);
+                if (!file.exists() || file.length() == 0) {
+                    System.err.println("文件不存在或为空: " + fileName);
+                    return data; // 返回空的数据集
+                }
+
+                fileIn = new FileInputStream(file);
                 channel = fileIn.getChannel();
                 lock = FileLockUtil.lockFile(channel, true);
 
@@ -43,8 +50,12 @@ public class ExcelFileLoader {
                 }
                 break; // 成功读取文件，退出循环
             } catch (IOException e) {
-                e.printStackTrace();
+                System.err.println("读取文件失败 (尝试 " + (retries + 1) + "/" + MAX_RETRIES + "): " + e.getMessage());
                 retries++;
+                if (retries >= MAX_RETRIES) {
+                    System.err.println("达到最大重试次数，无法读取文件: " + fileName);
+                    return data; // 返回空的数据集
+                }
                 try {
                     Thread.sleep(RETRY_DELAY_MS);
                 } catch (InterruptedException ie) {
@@ -59,7 +70,7 @@ public class ExcelFileLoader {
                         workbook.close();
                     }
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    System.err.println("关闭资源时出错: " + e.getMessage());
                 }
             }
         }

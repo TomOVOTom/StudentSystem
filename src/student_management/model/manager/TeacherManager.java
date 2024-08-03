@@ -1,30 +1,32 @@
 package student_management.model.manager;
 
 import student_management.model.entity.Teacher;
-import student_management.util.LoggerUtil;
-import student_management.util.TeacherExcelUtil;
+import student_management.util.commonutil.Logger;
+import student_management.util.excelutil.TeacherExcelUtil;
 
 import java.util.HashMap;
 import java.util.LinkedList;
 
 public class TeacherManager {
     private HashMap<String, Teacher> teachers;
+    private Logger logger;
 
-    public TeacherManager() {
+    public TeacherManager(Logger logger) {
         teachers = new HashMap<>();
         loadTeachersFromFile();
+        this.logger = logger;
     }
 
     public void addTeacher(Teacher teacher) {
         teachers.put(teacher.getId(), teacher);
         saveTeachersToFile();
-        LoggerUtil.log("添加老师: " + teacher.toString());
+        logger.log("添加老师: " + teacher.toString());
     }
 
     public void removeTeacher(String id) {
         teachers.remove(id);
         saveTeachersToFile();
-        LoggerUtil.log("删除老师: " + id);
+        logger.log("删除老师: " + id);
     }
 
     public void updateTeacher(String id, String name, String subject) {
@@ -33,7 +35,7 @@ public class TeacherManager {
             teacher.setName(name);
             teacher.setSubject(subject);
             saveTeachersToFile();
-            LoggerUtil.log("更新老师: " + id);
+            logger.log("更新老师: " + id);
         }
     }
 

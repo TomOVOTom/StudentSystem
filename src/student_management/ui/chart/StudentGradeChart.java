@@ -7,6 +7,8 @@ import org.jfree.chart.plot.PlotOrientation;
 import org.jfree.data.category.DefaultCategoryDataset;
 import student_management.model.entity.Student;
 import student_management.model.manager.StudentManager;
+import student_management.util.commonutil.ConsoleLogger;
+import student_management.util.commonutil.Logger;
 
 import javax.swing.*;
 import java.awt.*;
@@ -41,7 +43,8 @@ public class StudentGradeChart {
     }
 
     public static void main(String[] args) {
-        StudentManager studentManager = new StudentManager();
+        Logger logger = new ConsoleLogger(); // 或者使用其他 Logger 实现
+        StudentManager studentManager = new StudentManager(logger);
         StudentGradeChart chart = new StudentGradeChart(studentManager);
         JFrame frame = new JFrame();
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

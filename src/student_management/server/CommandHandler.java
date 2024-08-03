@@ -1,30 +1,50 @@
 package student_management.server;
 
+import student_management.server.handlers.*;
+
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
 public class CommandHandler {
-    private StudentCommandHandler studentCommandHandler;
-    private TeacherCommandHandler teacherCommandHandler;
-    private StudentClassCommandHandler studentClassCommandHandler;
-    private DepartmentCommandHandler departmentCommandHandler;
+    private StudentHandler studentHandler;
+    private TeacherHandler teacherHandler;
+    private ClassHandler classHandler;
+    private DepartmentHandler departmentHandler;
+    private CourseHandler courseHandler;
+    private GradeHandler gradeHandler;
+    private UserHandler userHandler;
 
-    public CommandHandler(StudentCommandHandler studentCommandHandler, TeacherCommandHandler teacherCommandHandler, StudentClassCommandHandler studentClassCommandHandler, DepartmentCommandHandler departmentCommandHandler) {
-        this.studentCommandHandler = studentCommandHandler;
-        this.teacherCommandHandler = teacherCommandHandler;
-        this.studentClassCommandHandler = studentClassCommandHandler;
-        this.departmentCommandHandler = departmentCommandHandler;
+    public CommandHandler(StudentHandler studentHandler,
+                          TeacherHandler teacherHandler,
+                          ClassHandler classHandler,
+                          DepartmentHandler departmentHandler,
+                          CourseHandler courseHandler,
+                          GradeHandler gradeHandler,
+                          UserHandler userHandler) {
+        this.studentHandler = studentHandler;
+        this.teacherHandler = teacherHandler;
+        this.classHandler = classHandler;
+        this.departmentHandler = departmentHandler;
+        this.courseHandler = courseHandler;
+        this.gradeHandler = gradeHandler;
+        this.userHandler = userHandler;
     }
 
     public String handleCommand(String command, ObjectInputStream ois) throws IOException, ClassNotFoundException {
         if (command.startsWith("STUDENT_")) {
-            return studentCommandHandler.handleCommand(command, ois);
+            return studentHandler.handleCommand(command, ois);
         } else if (command.startsWith("TEACHER_")) {
-            return teacherCommandHandler.handleCommand(command, ois);
+            return teacherHandler.handleCommand(command, ois);
         } else if (command.startsWith("CLASS_")) {
-            return studentClassCommandHandler.handleCommand(command, ois);
+            return classHandler.handleCommand(command, ois);
         } else if (command.startsWith("DEPARTMENT_")) {
-            return departmentCommandHandler.handleCommand(command, ois);
+            return departmentHandler.handleCommand(command, ois);
+        } else if (command.startsWith("COURSE_")) {
+            return courseHandler.handleCommand(command, ois);
+        } else if (command.startsWith("GRADE_")) {
+            return gradeHandler.handleCommand(command, ois);
+        } else if (command.startsWith("USER_")) {
+            return userHandler.handleCommand(command, ois);
         } else {
             return "未知命令";
         }
