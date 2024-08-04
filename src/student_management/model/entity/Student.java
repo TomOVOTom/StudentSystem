@@ -72,32 +72,6 @@ public class Student implements Serializable {
         this.courses.put(course.getCourseId(), course);
     }
 
-    public void addCourse(String courseId, String courseName, String teacher, String gradingSystem) {
-        Course course = new Course(courseId, courseName, teacher, gradingSystem);
-        this.courses.put(courseId, course);
-    }
-
-    public void removeCourse(String courseId) {
-        courses.remove(courseId);
-    }
-
-    public void updateCourse(String courseId, String courseName, String teacher, String gradingSystem) {
-        Course course = courses.get(courseId);
-        if (course != null) {
-            course.setCourseName(courseName);
-            course.setTeacher(teacher);
-            course.setGradingSystem(gradingSystem);
-        } else {
-            courses.put(courseId, new Course(courseId, courseName, teacher, gradingSystem));
-        }
-    }
-
-    public void setGrade(String courseId, int grade) {
-        Course course = courses.get(courseId);
-        if (course != null) {
-            course.setGrade(grade);
-        }
-    }
 
     @Override
     public String toString() {

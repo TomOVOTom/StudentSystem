@@ -7,8 +7,11 @@ public class CourseInputPanel {
     private JPanel panel;
     private JTextField courseIdField;
     private JTextField courseNameField;
-    private JTextField teacherField;
+    private JTextField teacherIdField;
     private JComboBox<String> gradingSystemComboBox;
+
+    private JTextField creditsField;
+
 
     public CourseInputPanel() {
         initComponents();
@@ -22,13 +25,16 @@ public class CourseInputPanel {
 
         courseIdField = createTextField();
         courseNameField = createTextField();
-        teacherField = createTextField();
+        teacherIdField = createTextField();
         gradingSystemComboBox = createComboBox();
+        creditsField = createTextField();
 
         addLabelAndField("课程编号:", courseIdField, gbc, 0);
         addLabelAndField("课程名称:", courseNameField, gbc, 1);
-        addLabelAndField("教师:", teacherField, gbc, 2);
+        addLabelAndField("教师ID:", teacherIdField, gbc, 2);
         addLabelAndField("评分方式:", gradingSystemComboBox, gbc, 3);
+        addLabelAndField("学分:", creditsField, gbc, 4);
+
     }
 
     private JTextField createTextField() {
@@ -66,8 +72,12 @@ public class CourseInputPanel {
         return courseNameField;
     }
 
-    public JTextField getTeacherField() {
-        return teacherField;
+    public JTextField getTeacherIdField() {
+        return teacherIdField;
+    }
+
+    public JTextField getCreditsField() {
+        return creditsField;
     }
 
     public JComboBox<String> getGradingSystemComboBox() {

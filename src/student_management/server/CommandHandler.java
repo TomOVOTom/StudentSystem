@@ -1,6 +1,7 @@
 package student_management.server;
 
 import student_management.server.handlers.*;
+import student_management.util.systeminfo.SystemInfoUtil;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -50,6 +51,8 @@ public class CommandHandler {
             return gradeHandler.handleCommand(command, ois);
         } else if (command.startsWith("USER_")) {
             return userHandler.handleCommand(command, ois);
+        } else if (command.startsWith("PING")) {
+            return SystemInfoUtil.getSystemInfo();
         } else {
             return "未知命令";
         }

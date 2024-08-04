@@ -7,16 +7,27 @@ public class Course implements Serializable {
 
     private String courseId;
     private String courseName;
-    private String teacher;
+    private String teacherId;
     private String gradingSystem;
     private int grade;
+    private float credits;
 
-    public Course(String courseId, String courseName, String teacher, String gradingSystem) {
+    public Course(String courseId, String courseName, String teacherId, String gradingSystem, float credits) {
         this.courseId = courseId;
         this.courseName = courseName;
-        this.teacher = teacher;
+        this.teacherId = teacherId;
         this.gradingSystem = gradingSystem;
-        this.grade = -1; // 初始化为-1，表示还未设置成绩
+        this.credits = credits;
+        this.grade = -1;
+    }
+
+    // 添加 getter 和 setter
+    public float getCredits() {
+        return credits;
+    }
+
+    public void setCredits(int credits) {
+        this.credits = credits;
     }
 
     // Getters and Setters
@@ -36,12 +47,12 @@ public class Course implements Serializable {
         this.courseName = courseName;
     }
 
-    public String getTeacher() {
-        return teacher;
+    public String getTeacherId() {
+        return teacherId;
     }
 
-    public void setTeacher(String teacher) {
-        this.teacher = teacher;
+    public void setTeacherId(String teacherId) {
+        this.teacherId = teacherId;
     }
 
     public String getGradingSystem() {
@@ -60,9 +71,39 @@ public class Course implements Serializable {
         this.grade = grade;
     }
 
+    public int getScoreInPercentage(int score) {
+        if ("等级制(A,B,C,D,F)".equals(gradingSystem)) {
+            switch (score) {
+                case 'A':
+                    return 100;
+                case 'B':
+                    return 80;
+                case 'C':
+                    return 70;
+                case 'D':
+                    return 60;
+                case 'F':
+                    return 0;
+                default:
+                    throw new IllegalArgumentException("无效的等级");
+            }
+        } else {
+            return score; // 百分制直接返回原始分数
+        }
+    }
+
+    public int getFullScore() {
+        if ("等级制(A,B,C,D,F)".equals(gradingSystem)) {
+            return 'A';  // 返回字符 'A' 的 ASCII 值
+        } else {
+            return 100;  // 百分制满分为100
+        }
+    }
+
     @Override
     public String toString() {
-        return "课程编号: " + courseId + ", 课程名称: " + courseName + ", 教师: " + teacher +
-                ", 评分方式: " + gradingSystem + ", 成绩: " + (grade == -1 ? "未设置" : grade);
+        return "课程编号: " + courseId + ", 课程名称: " + courseName + ", 教师ID: " + teacherId +
+                ", 评分方式: " + gradingSystem + ", 学分: " + credits +
+                ", 满分: " + (getFullScore() == 'A' ? "A" : getFullScore());
     }
 }

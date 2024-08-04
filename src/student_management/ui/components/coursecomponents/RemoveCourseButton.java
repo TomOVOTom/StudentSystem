@@ -27,7 +27,7 @@ public class RemoveCourseButton {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String courseId = courseIdField.getText();
-                String response = studentClient.sendCommand("STUDENT_REMOVE_COURSE", user, courseId);
+                String response = studentClient.sendCommand("COURSE_REMOVE_COURSE", user, courseId);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }

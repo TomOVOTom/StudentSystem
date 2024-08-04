@@ -36,7 +36,7 @@ public class AddCourseButton {
                 String courseName = courseNameField.getText();
                 String teacher = teacherField.getText();
                 String gradingSystem = (String) gradingSystemComboBox.getSelectedItem();
-                String response = studentClient.sendCommand("STUDENT_ADD_COURSE", user, courseId, courseName, teacher, gradingSystem);
+                String response = studentClient.sendCommand("COURSE_ADD_COURSE", user, courseId, courseName, teacher, gradingSystem);
                 JOptionPane.showMessageDialog(studentSystem, response);
                 studentSystem.updateDisplay();
             }

@@ -23,7 +23,8 @@ public class CourseButtonPanel {
                 studentClient,
                 inputPanel.getCourseIdField(),
                 inputPanel.getCourseNameField(),
-                inputPanel.getTeacherField(),
+                inputPanel.getTeacherIdField(),
+                inputPanel.getCreditsField(),
                 inputPanel.getGradingSystemComboBox(),
                 studentSystem,
                 user

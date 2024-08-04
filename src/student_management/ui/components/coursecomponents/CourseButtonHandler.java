@@ -11,15 +11,21 @@ public class CourseButtonHandler {
     private JTextField courseIdField;
     private JTextField courseNameField;
     private JTextField teacherField;
+    private JTextField creditsField;
     private JComboBox<String> gradingSystemComboBox;
     private StudentSystem studentSystem;
     private User user;
 
-    public CourseButtonHandler(StudentClient studentClient, JTextField courseIdField, JTextField courseNameField, JTextField teacherField, JComboBox<String> gradingSystemComboBox, StudentSystem studentSystem, User user) {
+    public CourseButtonHandler(StudentClient studentClient, JTextField courseIdField,
+                               JTextField courseNameField, JTextField teacherField,
+                               JTextField creditsField,
+                               JComboBox<String> gradingSystemComboBox,
+                               StudentSystem studentSystem, User user) {
         this.studentClient = studentClient;
         this.courseIdField = courseIdField;
         this.courseNameField = courseNameField;
         this.teacherField = teacherField;
+        this.creditsField = creditsField;
         this.gradingSystemComboBox = gradingSystemComboBox;
         this.studentSystem = studentSystem;
         this.user = user;

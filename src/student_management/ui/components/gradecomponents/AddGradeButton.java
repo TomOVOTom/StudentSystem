@@ -4,6 +4,9 @@ import student_management.client.StudentClient;
 import student_management.model.entity.Grade;
 import student_management.model.entity.User;
 import student_management.ui.main.StudentSystem;
+import student_management.util.validator.CourseValidator;
+import student_management.util.validator.GradeValidator;
+import student_management.util.validator.StudentValidator;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -31,17 +34,23 @@ public class AddGradeButton {
         addGradeButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                String studentId = studentIdField.getText();
-                String courseId = courseIdField.getText();
-                String scoreStr = scoreField.getText();
                 try {
-                    int score = Integer.parseInt(scoreStr);
+                    String studentId = studentIdField.getText();
+                    String courseId = courseIdField.getText();
+                    int score = Integer.parseInt(scoreField.getText());
+
+                    StudentValidator.validateStudentId(studentId);
+                    CourseValidator.validateCourseId(courseId);
+                    GradeValidator.validateScore(score);
+
                     Grade newGrade = new Grade(studentId, courseId, score);
-                    String response = studentClient.sendCommand("GRADE_ADD_GRADE", user, newGrade);
+                    String response = studentClient.sendCommand("GRADE_ADD", user, newGrade);
                     JOptionPane.showMessageDialog(studentSystem, response);
                     studentSystem.updateDisplay();
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(studentSystem, "成绩必须是一个整数", "输入错误", JOptionPane.ERROR_MESSAGE);
+                } catch (IllegalArgumentException ex) {
+                    JOptionPane.showMessageDialog(studentSystem, ex.getMessage(), "输入错误", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });

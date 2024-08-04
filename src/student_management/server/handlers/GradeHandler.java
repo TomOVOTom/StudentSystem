@@ -21,7 +21,7 @@ public class GradeHandler {
         User user = (User) ois.readObject();
         try {
             switch (command) {
-                case "GRADE_ADD_GRADE":
+                case "GRADE_ADD":
                     return addGrade(ois, user);
                 case "GRADE_REMOVE_GRADE":
                     return removeGrade(ois, user);

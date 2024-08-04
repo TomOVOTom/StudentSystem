@@ -3,17 +3,22 @@ package student_management.server.handlers;
 import student_management.model.entity.Course;
 import student_management.model.entity.User;
 import student_management.model.manager.CourseManager;
+import student_management.model.manager.TeacherManager;
 import student_management.util.commonutil.Logger;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
 
+import static student_management.util.validator.CourseValidator.validateTeacherId;
+
 public class CourseHandler {
     private CourseManager courseManager;
     private Logger logger;
+    private TeacherManager teacherManager;
 
-    public CourseHandler(CourseManager courseManager, Logger logger) {
+    public CourseHandler(CourseManager courseManager, TeacherManager teacherManager, Logger logger) {
         this.courseManager = courseManager;
+        this.teacherManager = teacherManager;
         this.logger = logger;
     }
 
@@ -46,9 +51,11 @@ public class CourseHandler {
         }
         String courseId = (String) ois.readObject();
         String courseName = (String) ois.readObject();
-        String teacher = (String) ois.readObject();
         String gradingSystem = (String) ois.readObject();
-        Course course = new Course(courseId, courseName, teacher, gradingSystem);
+        String teacherId = (String) ois.readObject();
+        float credits = (float) ois.readObject();
+        validateTeacherId(teacherId, teacherManager);
+        Course course = new Course(courseId, courseName, teacherId, gradingSystem, credits);
         courseManager.addCourse(course, user);
         logger.log("用户 " + user.getUsername() + " 添加了课程: " + course.getCourseId());
         return "课程添加成功";
@@ -70,9 +77,10 @@ public class CourseHandler {
         }
         String courseId = (String) ois.readObject();
         String courseName = (String) ois.readObject();
-        String teacher = (String) ois.readObject();
+        String teacherId = (String) ois.readObject();
         String gradingSystem = (String) ois.readObject();
-        Course course = new Course(courseId, courseName, teacher, gradingSystem);
+        float credits = (float) ois.readObject();
+        Course course = new Course(courseId, courseName, teacherId, gradingSystem, credits);
         courseManager.updateCourse(course, user);
         logger.log("用户 " + user.getUsername() + " 更新了课程: " + courseId);
         return "课程更新成功";

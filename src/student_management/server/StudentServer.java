@@ -38,7 +38,7 @@ public class StudentServer {
         TeacherHandler teacherHandler = new TeacherHandler(teacherManager, logger);
         ClassHandler classHandler = new ClassHandler(classManager, logger);
         DepartmentHandler departmentHandler = new DepartmentHandler(departmentManager, logger);
-        CourseHandler courseHandler = new CourseHandler(courseManager, logger);
+        CourseHandler courseHandler = new CourseHandler(courseManager, teacherManager, logger);
         GradeHandler gradeHandler = new GradeHandler(gradeManager, logger);
         UserHandler userHandler = new UserHandler(userManager, logger);
         studentCourseHandler = new StudentCourseHandler(studentCourseManager, logger);
