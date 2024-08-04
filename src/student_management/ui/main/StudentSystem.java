@@ -6,6 +6,9 @@ import student_management.util.excel.ExcelFileManager;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 public class StudentSystem extends JFrame {
     private StudentClient studentClient;
@@ -42,28 +45,35 @@ public class StudentSystem extends JFrame {
     }
 
     public void updateDisplay() {
-        System.out.println("更新显示");
-        if (!checkServerConnection()) {
-            JOptionPane.showMessageDialog(this, "无法连接到服务器，请检查服务器是否运行。", "错误", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-
-        int selectedIndex = tabManager.getSelectedIndex();
-        String tabTitle = tabManager.getSelectedTabTitle();
-
-        try {
-            String result = displayUpdater.getUpdateResult(tabTitle);
-//            System.out.println("查询结果：" + result);
-            if (result != null && !result.startsWith("错误:")) {
-                updateTabDisplay(selectedIndex, result);
-            } else {
-                JOptionPane.showMessageDialog(this, "获取数据失败: " + result, "错误", JOptionPane.ERROR_MESSAGE);
-            }
-        } catch (Exception e) {
-            System.err.println("更新显示时出错: " + e.getMessage());
-            JOptionPane.showMessageDialog(this, "无法获取信息: " + e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
-        }
+    System.out.println("更新显示");
+    if (!checkServerConnection()) {
+        JOptionPane.showMessageDialog(this, "无法连接到服务器，请检查服务器是否运行。", "错误", JOptionPane.ERROR_MESSAGE);
+        return;
     }
+
+    int selectedIndex = tabManager.getSelectedIndex();
+    String tabTitle = tabManager.getSelectedTabTitle();
+
+    try {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+            return displayUpdater.getUpdateResult(tabTitle);
+        });
+
+        String result = future.get(10, TimeUnit.SECONDS); // 设置10秒超时
+        System.out.println("收到服务器响应: " + result);
+        if (result != null && !result.startsWith("错误:")) {
+            updateTabDisplay(selectedIndex, result);
+        } else {
+            JOptionPane.showMessageDialog(this, "获取数据失败: " + result, "错误", JOptionPane.ERROR_MESSAGE);
+        }
+    } catch (TimeoutException e) {
+        System.err.println("更新显示超时: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "操作超时，请稍后重试", "错误", JOptionPane.ERROR_MESSAGE);
+    } catch (Exception e) {
+        System.err.println("更新显示时出错: " + e.getMessage());
+        JOptionPane.showMessageDialog(this, "无法获取信息: " + e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
+    }
+}
 
     private boolean checkServerConnection() {
         for (int i = 0; i < 3; i++) {

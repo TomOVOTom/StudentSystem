@@ -15,7 +15,7 @@ public class ExcelFileManager {
     private static final Map<String, String[]> FILE_HEADERS = new HashMap<>();
 
     static {
-        FILE_HEADERS.put("courses.xlsx", new String[]{"课程ID", "课程名称", "学分"});
+        FILE_HEADERS.put("courses.xlsx", new String[]{"课程ID", "课程名称", "教师ID", "评分方式", "学分"});
         FILE_HEADERS.put("grades.xlsx", new String[]{"学生ID", "课程ID", "成绩"});
         FILE_HEADERS.put("students.xlsx", new String[]{"学生ID", "姓名", "年龄", "性别", "班级ID"});
         FILE_HEADERS.put("users.xlsx", new String[]{"用户名", "密码", "角色"});

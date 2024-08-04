@@ -33,10 +33,16 @@ public class CourseManager {
         return result;
     }
 
-    public void addCourse(Course course, User user) {
+     public void addCourse(Course course, User user) {
+        logger.log("开始添加课程: " + course.getCourseId());
         performAdminOperation(user,
-                () -> courses.put(course.getCourseId(), course),
+                () -> {
+                    courses.put(course.getCourseId(), course);
+                    logger.log("课程已添加到内存中: " + course.getCourseId());
+                    return null;
+                },
                 "用户 " + user.getUsername() + " 添加课程: " + course.toString());
+        logger.log("课程添加完成: " + course.getCourseId());
     }
 
     public void removeCourse(String courseId, User user) {

@@ -24,6 +24,7 @@ public class CourseHandler {
 
     public String handleCommand(String command, ObjectInputStream ois) throws IOException, ClassNotFoundException {
         User user = (User) ois.readObject();
+        logger.log("处理课程命令: " + command + ", 用户: " + user.getUsername());
         try {
             switch (command) {
                 case "COURSE_ADD_COURSE":
@@ -41,25 +42,59 @@ public class CourseHandler {
             }
         } catch (Exception e) {
             logger.log("错误: " + e.getMessage());
+            e.printStackTrace(); // 添加这行以打印完整的堆栈跟踪
             return "操作失败: " + e.getMessage();
         }
     }
 
     private String handleAddCourse(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
+    logger.log("开始添加课程");
+    try {
         if (!user.getRole().equals("admin")) {
-            throw new SecurityException("无权限操作");
+            logger.log("用户无权限添加课程");
+            return "无权限操作";
         }
+        logger.log("开始读取课程信息");
         String courseId = (String) ois.readObject();
+        logger.log("读取课程ID: " + courseId);
         String courseName = (String) ois.readObject();
+        logger.log("读取课程名称: " + courseName);
         String gradingSystem = (String) ois.readObject();
+        logger.log("读取评分系统: " + gradingSystem);
         String teacherId = (String) ois.readObject();
-        float credits = (float) ois.readObject();
-        validateTeacherId(teacherId, teacherManager);
+        logger.log("读取教师ID: " + teacherId);
+        float credits;
+        try {
+            credits = Float.parseFloat((String) ois.readObject());
+            logger.log("读取学分: " + credits);
+        } catch (Exception e) {
+            logger.log("读取学分失败: " + e.getMessage());
+            return "添加课程失败: 无效的学分值";
+        }
+
+
+        logger.log("验证教师ID");
+        try {
+            validateTeacherId(teacherId, teacherManager);
+        } catch (Exception e) {
+            logger.log("验证教师ID失败: " + e.getMessage());
+            return "添加课程失败: " + e.getMessage();
+        }
+
+        logger.log("创建课程对象");
         Course course = new Course(courseId, courseName, teacherId, gradingSystem, credits);
+
+        logger.log("添加课程到管理器");
         courseManager.addCourse(course, user);
-        logger.log("用户 " + user.getUsername() + " 添加了课程: " + course.getCourseId());
+
+        logger.log("课程添加成功: " + course.getCourseId());
         return "课程添加成功";
+    } catch (Exception e) {
+        logger.log("添加课程时发生错误: " + e.getMessage());
+        e.printStackTrace();
+        return "添加课程失败: " + e.getMessage();
     }
+}
 
     private String handleRemoveCourse(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
         if (!user.getRole().equals("admin")) {

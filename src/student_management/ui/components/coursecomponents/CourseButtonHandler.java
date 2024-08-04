@@ -32,8 +32,8 @@ public class CourseButtonHandler {
     }
 
     public JButton createAddCourseButton() {
-        return new AddCourseButton(studentClient, courseIdField, courseNameField, teacherField, gradingSystemComboBox, studentSystem, user).createButton();
-    }
+    return new AddCourseButton(studentClient, courseIdField, courseNameField, teacherField, creditsField, gradingSystemComboBox, studentSystem, user).createButton();
+}
 
     public JButton createRemoveCourseButton() {
         return new RemoveCourseButton(studentClient, courseIdField, studentSystem, user).createButton();

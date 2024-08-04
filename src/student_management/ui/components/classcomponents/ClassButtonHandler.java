@@ -14,7 +14,9 @@ public class ClassButtonHandler {
     private StudentSystem studentSystem;
     private User user;
 
-    public ClassButtonHandler(StudentClient studentClient, JTextField classIdField, JTextField classNameField, JTextField departmentField, StudentSystem studentSystem, User user) {
+    public ClassButtonHandler(StudentClient studentClient, JTextField classIdField,
+                              JTextField classNameField, JTextField departmentField,
+                              StudentSystem studentSystem, User user) {
         this.studentClient = studentClient;
         this.classIdField = classIdField;
         this.classNameField = classNameField;

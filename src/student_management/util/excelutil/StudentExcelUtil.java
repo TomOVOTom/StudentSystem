@@ -24,7 +24,7 @@ public class StudentExcelUtil {
             for (Course course : student.getCourses().values()) {
                 row.createCell(cellIndex++).setCellValue(course.getCourseId());
                 row.createCell(cellIndex++).setCellValue(course.getCourseName());
-                row.createCell(cellIndex++).setCellValue(course.getTeacher());
+                row.createCell(cellIndex++).setCellValue(course.getTeacherId());
                 row.createCell(cellIndex++).setCellValue(course.getGradingSystem());
                 row.createCell(cellIndex++).setCellValue(course.getGrade());
             }
@@ -44,7 +44,7 @@ public class StudentExcelUtil {
             String teacher = CellUtil.getCellValueAsString(row.getCell(7));
             String gradingSystem = CellUtil.getCellValueAsString(row.getCell(8));
             int grade = (int) CellUtil.getNumericCellValue(row.getCell(9));
-            Course course = new Course(courseId, courseName, teacher, gradingSystem);
+            Course course = new Course(courseId, courseName, teacher, gradingSystem,0.0f);
             course.setGrade(grade);
             student.addCourse(course);
             return student;
