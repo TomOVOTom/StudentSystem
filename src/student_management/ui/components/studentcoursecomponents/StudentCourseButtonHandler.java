@@ -26,7 +26,7 @@ public class StudentCourseButtonHandler {
         selectCourseButton.addActionListener(e -> {
             String studentId = studentIdField.getText();
             String courseId = courseIdField.getText();
-            String response = studentClient.sendCommand("STUDENT_SELECT_COURSE", user, studentId, courseId);
+            String response = studentClient.sendCommand("STUDENT_COURSE_SELECT", user, studentId, courseId);
             JOptionPane.showMessageDialog(studentSystem, response);
             studentSystem.updateDisplay();
         });
@@ -38,7 +38,7 @@ public class StudentCourseButtonHandler {
         dropCourseButton.addActionListener(e -> {
             String studentId = studentIdField.getText();
             String courseId = courseIdField.getText();
-            String response = studentClient.sendCommand("STUDENT_DROP_COURSE", user, studentId, courseId);
+            String response = studentClient.sendCommand("STUDENT_COURSE_DROP", user, studentId, courseId);
             JOptionPane.showMessageDialog(studentSystem, response);
             studentSystem.updateDisplay();
         });
@@ -49,7 +49,7 @@ public class StudentCourseButtonHandler {
         JButton queryCoursesButton = new JButton("查询学生课程");
         queryCoursesButton.addActionListener(e -> {
             String studentId = studentIdField.getText();
-            String response = studentClient.sendCommand("STUDENT_QUERY_COURSES", user, studentId);
+            String response = studentClient.sendCommand("STUDENT_COURSE_QUERY", user, studentId);
             JOptionPane.showMessageDialog(studentSystem, response);
         });
         return queryCoursesButton;

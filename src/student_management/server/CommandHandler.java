@@ -13,6 +13,7 @@ public class CommandHandler {
     private CourseHandler courseHandler;
     private GradeHandler gradeHandler;
     private UserHandler userHandler;
+    private StudentCourseHandler studentCourseHandler;
 
     public CommandHandler(StudentHandler studentHandler,
                           TeacherHandler teacherHandler,
@@ -20,7 +21,8 @@ public class CommandHandler {
                           DepartmentHandler departmentHandler,
                           CourseHandler courseHandler,
                           GradeHandler gradeHandler,
-                          UserHandler userHandler) {
+                          UserHandler userHandler,
+                          StudentCourseHandler studentCourseHandler) {
         this.studentHandler = studentHandler;
         this.teacherHandler = teacherHandler;
         this.classHandler = classHandler;
@@ -28,10 +30,13 @@ public class CommandHandler {
         this.courseHandler = courseHandler;
         this.gradeHandler = gradeHandler;
         this.userHandler = userHandler;
+        this.studentCourseHandler = studentCourseHandler;
     }
 
     public String handleCommand(String command, ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        if (command.startsWith("STUDENT_")) {
+        if (command.startsWith("STUDENT_COURSE_")) {
+            return studentCourseHandler.handleCommand(command, ois);
+        } else if (command.startsWith("STUDENT_")) {
             return studentHandler.handleCommand(command, ois);
         } else if (command.startsWith("TEACHER_")) {
             return teacherHandler.handleCommand(command, ois);

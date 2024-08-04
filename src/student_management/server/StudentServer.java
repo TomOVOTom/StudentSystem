@@ -20,6 +20,8 @@ public class StudentServer {
     private Logger logger;
     private UserHandler userHandler;
     private CourseHandler courseHandler;
+    private StudentCourseManager studentCourseManager;
+    private StudentCourseHandler studentCourseHandler;
 
     public StudentServer() {
         this.logger = new ConsoleLogger();
@@ -30,6 +32,7 @@ public class StudentServer {
         CourseManager courseManager = new CourseManager(logger);
         GradeManager gradeManager = new GradeManager(logger);
         UserManager userManager = new UserManager(logger);
+        studentCourseManager = new StudentCourseManager(logger);
 
         StudentHandler studentHandler = new StudentHandler(studentManager, courseHandler, logger);
         TeacherHandler teacherHandler = new TeacherHandler(teacherManager, logger);
@@ -38,9 +41,10 @@ public class StudentServer {
         CourseHandler courseHandler = new CourseHandler(courseManager, logger);
         GradeHandler gradeHandler = new GradeHandler(gradeManager, logger);
         UserHandler userHandler = new UserHandler(userManager, logger);
+        studentCourseHandler = new StudentCourseHandler(studentCourseManager, logger);
 
         commandHandler = new CommandHandler(studentHandler, teacherHandler, classHandler,
-                departmentHandler, courseHandler, gradeHandler, userHandler);
+                departmentHandler, courseHandler, gradeHandler, userHandler, studentCourseHandler);
     }
 
     public void startServer(int port) {
