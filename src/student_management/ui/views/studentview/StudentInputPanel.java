@@ -8,8 +8,11 @@ public class StudentInputPanel {
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
+    private JTextField genderField;
     private JTextField classIdField;
+    private JTextField classNameField;
     private JTextField departmentIdField;
+    private JTextField departmentNameField;
 
     public StudentInputPanel() {
         initComponents();
@@ -24,14 +27,20 @@ public class StudentInputPanel {
         idField = createTextField();
         nameField = createTextField();
         ageField = createTextField();
+        genderField = createTextField();
         classIdField = createTextField();
+        classNameField = createTextField();
         departmentIdField = createTextField();
+        departmentNameField = createTextField();
 
         addLabelAndField("学号:", idField, gbc, 0);
         addLabelAndField("姓名:", nameField, gbc, 1);
         addLabelAndField("年龄:", ageField, gbc, 2);
-        addLabelAndField("班级ID:", classIdField, gbc, 3);
-        addLabelAndField("院系ID:", departmentIdField, gbc, 4);
+        addLabelAndField("性别:", genderField, gbc, 3);
+        addLabelAndField("班级ID:", classIdField, gbc, 4);
+        addLabelAndField("班级名称:", classNameField, gbc, 5);
+        addLabelAndField("院系ID:", departmentIdField, gbc, 6);
+        addLabelAndField("院系名称:", departmentNameField, gbc, 7);
     }
 
     private JTextField createTextField() {
@@ -74,5 +83,17 @@ public class StudentInputPanel {
 
     public JTextField getDepartmentIdField() {
         return departmentIdField;
+    }
+
+    public JTextField getGenderField() {
+        return genderField;
+    }
+
+    public JTextField getClassNameField() {
+        return classNameField;
+    }
+
+    public JTextField getDepartmentNameField() {
+        return departmentNameField;
     }
 }

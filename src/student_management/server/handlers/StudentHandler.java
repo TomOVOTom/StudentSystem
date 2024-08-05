@@ -63,7 +63,7 @@ public class StudentHandler {
 
     private String handleUpdateStudent(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
         Student student = readStudentFromStream(ois);
-        studentManager.updateStudent(student.getId(), student.getName(), student.getAge(), student.getClassId(), student.getDepartmentId(), user);
+        studentManager.updateStudent(student, user);
         logger.log("用户 " + user.getUsername() + " 更新了学生: " + student.getId());
         return "学生更新成功";
     }
@@ -83,8 +83,11 @@ public class StudentHandler {
         String id = (String) ois.readObject();
         String name = (String) ois.readObject();
         int age = (int) ois.readObject();
+        String gender = (String) ois.readObject();
         String classId = (String) ois.readObject();
+        String className = (String) ois.readObject();
         String departmentId = (String) ois.readObject();
-        return new Student(id, name, age, classId, departmentId);
+        String departmentName = (String) ois.readObject();
+        return new Student(id, name, age, gender, classId, className, departmentId, departmentName);
     }
 }

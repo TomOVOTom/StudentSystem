@@ -41,20 +41,23 @@ public class StudentManager {
         }
     }
 
-    public void updateStudent(String id, String name, int age, String classId, String departmentId, User user) {
+    public void updateStudent(Student updatedStudent, User user) {
         if (!user.getRole().equals("admin")) {
             throw new SecurityException("无权限操作");
         }
         students.stream()
-                .filter(student -> student.getId().equals(id))
+                .filter(student -> student.getId().equals(updatedStudent.getId()))
                 .findFirst()
                 .ifPresent(student -> {
-                    student.setName(name);
-                    student.setAge(age);
-                    student.setClassId(classId);
-                    student.setDepartmentId(departmentId);
+                    student.setName(updatedStudent.getName());
+                    student.setAge(updatedStudent.getAge());
+                    student.setGender(updatedStudent.getGender());
+                    student.setClassId(updatedStudent.getClassId());
+                    student.setClassName(updatedStudent.getClassName());
+                    student.setDepartmentId(updatedStudent.getDepartmentId());
+                    student.setDepartmentName(updatedStudent.getDepartmentName());
                     saveStudentsToFile();
-                    logger.log("用户 " + user.getUsername() + " 更新学生: " + id);
+                    logger.log("用户 " + user.getUsername() + " 更新学生: " + updatedStudent.getId());
                 });
     }
 

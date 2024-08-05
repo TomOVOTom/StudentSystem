@@ -24,8 +24,11 @@ public class StudentButtonPanel {
                 inputPanel.getIdField(),
                 inputPanel.getNameField(),
                 inputPanel.getAgeField(),
+                inputPanel.getGenderField(),
                 inputPanel.getClassIdField(),
+                inputPanel.getClassNameField(),
                 inputPanel.getDepartmentIdField(),
+                inputPanel.getDepartmentNameField(),
                 studentSystem,
                 user
         );

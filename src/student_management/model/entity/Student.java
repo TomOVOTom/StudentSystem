@@ -1,8 +1,6 @@
 package student_management.model.entity;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.Map;
 
 public class Student implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -10,17 +8,21 @@ public class Student implements Serializable {
     private String id;
     private String name;
     private int age;
+    private String gender;
     private String classId;
+    private String className;
     private String departmentId;
-    private Map<String, Course> courses; // 课程和课程信息
+    private String departmentName;
 
-    public Student(String id, String name, int age, String classId, String departmentId) {
+    public Student(String id, String name, int age, String gender, String classId, String className, String departmentId, String departmentName) {
         this.id = id;
         this.name = name;
         this.age = age;
+        this.gender = gender;
         this.classId = classId;
+        this.className = className;
         this.departmentId = departmentId;
-        this.courses = new HashMap<>();
+        this.departmentName = departmentName;
     }
 
     // Getters and Setters
@@ -48,12 +50,28 @@ public class Student implements Serializable {
         this.age = age;
     }
 
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
     public String getClassId() {
         return classId;
     }
 
     public void setClassId(String classId) {
         this.classId = classId;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
     }
 
     public String getDepartmentId() {
@@ -64,27 +82,23 @@ public class Student implements Serializable {
         this.departmentId = departmentId;
     }
 
-    public Map<String, Course> getCourses() {
-        return courses;
+    public String getDepartmentName() {
+        return departmentName;
     }
 
-    public void addCourse(Course course) {
-        this.courses.put(course.getCourseId(), course);
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
-
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("学号: ").append(id)
-                .append(", 姓名: ").append(name)
-                .append(", 年龄: ").append(age)
-                .append(", 班级: ").append(classId)
-                .append(", 院系: ").append(departmentId)
-                .append(", 课程: ");
-        for (Course course : courses.values()) {
-            sb.append(course.toString()).append(", ");
-        }
-        return sb.toString();
+        return "学号: " + id +
+                ", 姓名: " + name +
+                ", 年龄: " + age +
+                ", 性别: " + gender +
+                ", 班级ID: " + classId +
+                ", 班级: " + className +
+                ", 院系ID: " + departmentId +
+                ", 院系: " + departmentName;
     }
 }
