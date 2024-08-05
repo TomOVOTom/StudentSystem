@@ -27,13 +27,13 @@ public class CourseHandler {
         logger.log("处理课程命令: " + command + ", 用户: " + user.getUsername());
         try {
             switch (command) {
-                case "COURSE_ADD_COURSE":
+                case "COURSE_ADD":
                     return handleAddCourse(ois, user);
-                case "COURSE_REMOVE_COURSE":
+                case "COURSE_REMOVE":
                     return handleRemoveCourse(ois, user);
-                case "COURSE_UPDATE_COURSE":
+                case "COURSE_UPDATE":
                     return handleUpdateCourse(ois, user);
-                case "COURSE_QUERY_COURSE":
+                case "COURSE_QUERY":
                     return handleQueryCourse(ois, user);
                 case "COURSE_QUERY_ALL_COURSES":
                     return handleQueryAllCourses(user);

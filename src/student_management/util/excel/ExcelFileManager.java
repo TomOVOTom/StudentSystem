@@ -22,7 +22,7 @@ public class ExcelFileManager {
         FILE_HEADERS.put("student_classes.xlsx", new String[]{"班级ID", "班级名称", "院系ID"});
         FILE_HEADERS.put("departments.xlsx", new String[]{"院系ID", "院系名称"});
         FILE_HEADERS.put("teachers.xlsx", new String[]{"教师ID", "姓名", "教授科目", "年龄", "性别", "院系ID"});
-        FILE_HEADERS.put("teacher_courses.xlsx", new String[]{"学生ID", "课程ID"});
+        FILE_HEADERS.put("student_courses.xlsx", new String[]{"学生ID", "课程ID"});
     }
 
 

@@ -32,19 +32,54 @@ public class CourseButtonHandler {
     }
 
     public JButton createAddCourseButton() {
-    return new AddCourseButton(studentClient, courseIdField, courseNameField, teacherField, creditsField, gradingSystemComboBox, studentSystem, user).createButton();
-}
+        JButton addCourseButton = new JButton("添加课程");
+        addCourseButton.addActionListener(e -> {
+            String courseId = courseIdField.getText();
+            String courseName = courseNameField.getText();
+            String teacherId = teacherField.getText();
+            String gradingSystem = (String) gradingSystemComboBox.getSelectedItem();
+            String credits = creditsField.getText();
+            String response = studentClient.sendCommand("COURSE_ADD", user, courseId, courseName, gradingSystem, teacherId, credits);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return addCourseButton;
+    }
 
     public JButton createRemoveCourseButton() {
-        return new RemoveCourseButton(studentClient, courseIdField, studentSystem, user).createButton();
+        JButton removeCourseButton = new JButton("删除课程");
+        removeCourseButton.addActionListener(e -> {
+            String courseId = courseIdField.getText();
+            String response = studentClient.sendCommand("COURSE_REMOVE", user, courseId);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return removeCourseButton;
     }
 
     public JButton createUpdateCourseButton() {
-        return new UpdateCourseButton(studentClient, courseIdField, courseNameField, teacherField, gradingSystemComboBox, studentSystem, user).createButton();
+        JButton updateCourseButton = new JButton("更新课程");
+        updateCourseButton.addActionListener(e -> {
+            String courseId = courseIdField.getText();
+            String courseName = courseNameField.getText();
+            String teacher = teacherField.getText();
+            String gradingSystem = (String) gradingSystemComboBox.getSelectedItem();
+            String credits = creditsField.getText();
+            String response = studentClient.sendCommand("COURSE_UPDATE", user, courseId, courseName, teacher, gradingSystem, credits);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return updateCourseButton;
     }
 
     public JButton createQueryCourseButton() {
-        return new QueryCourseButton(studentClient, courseIdField, studentSystem, user).createButton();
+        JButton queryCourseButton = new JButton("查询课程");
+        queryCourseButton.addActionListener(e -> {
+            String courseId = courseIdField.getText();
+            String response = studentClient.sendCommand("COURSE_QUERY", user, courseId);
+            JOptionPane.showMessageDialog(studentSystem, response);
+        });
+        return queryCourseButton;
     }
 
     public JButton createClearCourseFieldsButton() {
@@ -53,6 +88,7 @@ public class CourseButtonHandler {
             courseIdField.setText("");
             courseNameField.setText("");
             teacherField.setText("");
+            creditsField.setText("");
             gradingSystemComboBox.setSelectedIndex(0);
         });
         return clearButton;

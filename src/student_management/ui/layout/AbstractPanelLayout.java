@@ -7,7 +7,7 @@ import student_management.ui.main.StudentSystem;
 import javax.swing.*;
 import java.awt.*;
 
-public abstract class CommonPanelLayout {
+public abstract class AbstractPanelLayout {
     protected JPanel panel;
     protected StudentClient studentClient;
     protected StudentSystem studentSystem;
@@ -15,7 +15,7 @@ public abstract class CommonPanelLayout {
     protected JPanel inputPanel;
     protected JPanel buttonPanel;
 
-    public CommonPanelLayout(StudentClient studentClient, StudentSystem studentSystem, User user) {
+    public AbstractPanelLayout(StudentClient studentClient, StudentSystem studentSystem, User user) {
         this.studentClient = studentClient;
         this.studentSystem = studentSystem;
         this.user = user;

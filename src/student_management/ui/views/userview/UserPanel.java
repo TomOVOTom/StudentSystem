@@ -2,12 +2,12 @@ package student_management.ui.views.userview;
 
 import student_management.client.StudentClient;
 import student_management.model.entity.User;
-import student_management.ui.layout.CommonPanelLayout;
+import student_management.ui.layout.AbstractPanelLayout;
 import student_management.ui.main.StudentSystem;
 
 import javax.swing.*;
 
-public class UserPanel extends CommonPanelLayout {
+public class UserPanel extends AbstractPanelLayout {
     private UserInputPanel inputPanel;
     private UserButtonPanel buttonPanel;
 

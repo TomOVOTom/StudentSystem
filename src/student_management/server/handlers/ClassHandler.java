@@ -21,13 +21,13 @@ public class ClassHandler {
         User user = (User) ois.readObject();
         try {
             switch (command) {
-                case "CLASS_ADD_CLASS":
+                case "CLASS_ADD":
                     return addClass(ois, user);
-                case "CLASS_REMOVE_CLASS":
+                case "CLASS_REMOVE":
                     return removeClass(ois, user);
-                case "CLASS_UPDATE_CLASS":
+                case "CLASS_UPDATE":
                     return updateClass(ois, user);
-                case "CLASS_QUERY_CLASS":
+                case "CLASS_QUERY":
                     return queryClass(ois, user);
                 case "CLASS_QUERY_ALL_CLASSES":
                     return queryAllClasses(user);
