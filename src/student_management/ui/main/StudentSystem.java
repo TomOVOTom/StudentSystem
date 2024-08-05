@@ -37,10 +37,9 @@ public class StudentSystem extends JFrame {
     private void initComponents() {
         System.out.println("初始化组件");
         setTitle("学生管理系统");
-        setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
-
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
         tabManager = new TabManager(studentClient, this, user);
         add(tabManager.getTabbedPane(), BorderLayout.CENTER);
 

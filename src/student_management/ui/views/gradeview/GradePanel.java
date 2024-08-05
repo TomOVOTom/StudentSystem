@@ -14,7 +14,7 @@ public class GradePanel {
     private User user;
     private GradeInputPanel inputPanel;
     private GradeButtonPanel buttonPanel;
-    private JTextArea displayArea;
+
 
     public GradePanel(StudentClient studentClient, StudentSystem studentSystem, User user) {
         this.studentClient = studentClient;
@@ -32,17 +32,10 @@ public class GradePanel {
         buttonPanel = new GradeButtonPanel(studentClient, inputPanel, studentSystem, user);
         panel.add(buttonPanel.getPanel(), BorderLayout.CENTER);
 
-        displayArea = new JTextArea(10, 40);
-        displayArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(displayArea);
-        panel.add(scrollPane, BorderLayout.SOUTH);
     }
 
     public JPanel getPanel() {
         return panel;
     }
 
-    public void updateDisplay(String result) {
-        displayArea.setText(result);
-    }
 }

@@ -14,7 +14,6 @@ public class StudentCourseSelectionPanel {
     private User user;
     private StudentCourseInputPanel inputPanel;
     private StudentCourseButtonPanel buttonPanel;
-    private JTextArea displayArea;
 
     public StudentCourseSelectionPanel(StudentClient studentClient, StudentSystem studentSystem, User user) {
         this.studentClient = studentClient;
@@ -32,17 +31,11 @@ public class StudentCourseSelectionPanel {
         buttonPanel = new StudentCourseButtonPanel(studentClient, inputPanel, studentSystem, user);
         panel.add(buttonPanel.getPanel(), BorderLayout.CENTER);
 
-        displayArea = new JTextArea(10, 40);
-        displayArea.setEditable(false);
-        JScrollPane scrollPane = new JScrollPane(displayArea);
-        panel.add(scrollPane, BorderLayout.SOUTH);
+
     }
 
     public JPanel getPanel() {
         return panel;
     }
 
-    public void updateDisplay(String result) {
-        displayArea.setText(result);
-    }
 }

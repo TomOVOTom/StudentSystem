@@ -1,10 +1,13 @@
 package student_management.ui.views.teacherview;
 
-import javax.swing.*;
-import java.awt.*;
+import student_management.ui.layout.AbstractInputPanel;
 
-public class TeacherInputPanel {
-    private JPanel panel;
+import javax.swing.*;
+
+import static student_management.ui.layout.UIComponentFactory.createComboBox;
+import static student_management.ui.layout.UIComponentFactory.createTextField;
+
+public class TeacherInputPanel extends AbstractInputPanel {
     private JTextField teacherIdField;
     private JTextField teacherNameField;
     private JTextField teacherSubjectField;
@@ -12,50 +15,21 @@ public class TeacherInputPanel {
     private JComboBox<String> genderComboBox;
     private JTextField departmentIdField;
 
-    public TeacherInputPanel() {
-        initComponents();
-    }
-
-    private void initComponents() {
-        panel = new JPanel(new GridBagLayout());
-        GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(10, 10, 10, 10);
-        gbc.fill = GridBagConstraints.BOTH;
-
+    @Override
+    protected void initComponents() {
         teacherIdField = createTextField();
         teacherNameField = createTextField();
         teacherSubjectField = createTextField();
         ageField = createTextField();
-        genderComboBox = new JComboBox<>(new String[]{"男", "女"});
+        genderComboBox = createComboBox(new String[]{"男", "女"});
         departmentIdField = createTextField();
 
-        addLabelAndField("教师ID:", teacherIdField, gbc, 0);
-        addLabelAndField("教师姓名:", teacherNameField, gbc, 1);
-        addLabelAndField("教授科目:", teacherSubjectField, gbc, 2);
-        addLabelAndField("年龄:", ageField, gbc, 3);
-        addLabelAndField("性别:", genderComboBox, gbc, 4);
-        addLabelAndField("院系ID:", departmentIdField, gbc, 5);
-    }
-
-    private JTextField createTextField() {
-        JTextField field = new JTextField(20);
-        field.setPreferredSize(new Dimension(field.getPreferredSize().width, 40));
-        return field;
-    }
-
-    private void addLabelAndField(String labelText, JComponent field, GridBagConstraints gbc, int gridy) {
-        gbc.gridx = 0;
-        gbc.gridy = gridy;
-        gbc.weightx = 0;
-        panel.add(new JLabel(labelText), gbc);
-
-        gbc.gridx = 1;
-        gbc.weightx = 1.0;
-        panel.add(field, gbc);
-    }
-
-    public JPanel getPanel() {
-        return panel;
+        addLabelAndField("教师ID:", teacherIdField, 0);
+        addLabelAndField("教师姓名:", teacherNameField, 1);
+        addLabelAndField("教授科目:", teacherSubjectField, 2);
+        addLabelAndField("年龄:", ageField, 3);
+        addLabelAndField("性别:", genderComboBox, 4);
+        addLabelAndField("院系ID:", departmentIdField, 5);
     }
 
     public JTextField getTeacherIdField() {
@@ -69,6 +43,7 @@ public class TeacherInputPanel {
     public JTextField getTeacherSubjectField() {
         return teacherSubjectField;
     }
+
     public JTextField getAgeField() {
         return ageField;
     }

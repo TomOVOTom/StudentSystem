@@ -14,7 +14,6 @@ public abstract class CommonPanelLayout {
     protected User user;
     protected JPanel inputPanel;
     protected JPanel buttonPanel;
-    protected JTextArea displayArea;
 
     public CommonPanelLayout(StudentClient studentClient, StudentSystem studentSystem, User user) {
         this.studentClient = studentClient;
@@ -23,39 +22,20 @@ public abstract class CommonPanelLayout {
         initComponents();
     }
 
-   protected void initComponents() {
-    panel = new JPanel(new GridBagLayout());
-    GridBagConstraints gbc = new GridBagConstraints();
-    gbc.insets = new Insets(0, 0, 0, 0);
-    gbc.fill = GridBagConstraints.BOTH;
-    gbc.gridx = 0;
-    gbc.weightx = 1.0;
+    protected void initComponents() {
+        panel = new JPanel(new BorderLayout());
 
-    inputPanel = createInputPanel();
-    gbc.gridy = 0;
-    gbc.weighty = 0;
-    panel.add(inputPanel, gbc);
+        inputPanel = createInputPanel();
+        panel.add(inputPanel, BorderLayout.NORTH);
 
-    buttonPanel = createButtonPanel();
-    gbc.gridy = 1;
-    gbc.weighty = 1.0;
-    panel.add(buttonPanel, gbc);
+        buttonPanel = createButtonPanel();
+        panel.add(buttonPanel, BorderLayout.CENTER);
+    }
 
-    displayArea = new JTextArea(5, 40);
-    displayArea.setEditable(false);
-    JScrollPane scrollPane = new JScrollPane(displayArea);
-    gbc.gridy = 0;
-    gbc.weighty = 0;
-    panel.add(scrollPane, gbc);
-}
     protected abstract JPanel createInputPanel();
     protected abstract JPanel createButtonPanel();
 
     public JPanel getPanel() {
         return panel;
-    }
-
-    public void updateDisplay(String result) {
-        displayArea.setText(result);
     }
 }
