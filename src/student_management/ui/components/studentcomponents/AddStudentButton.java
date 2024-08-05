@@ -9,11 +9,11 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AddStudentButton {
+    private JComboBox<String> genderComboBox;
     private StudentClient studentClient;
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
-    private JTextField genderField;
     private JTextField classIdField;
     private JTextField classNameField;
     private JTextField departmentIdField;
@@ -21,12 +21,12 @@ public class AddStudentButton {
     private StudentSystem studentSystem;
     private User user;
 
-    public AddStudentButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, JTextField genderField, JTextField classIdField, JTextField classNameField, JTextField departmentIdField, JTextField departmentNameField, StudentSystem studentSystem, User user) {
+    public AddStudentButton(StudentClient studentClient, JTextField idField, JTextField nameField, JTextField ageField, JComboBox<String> genderComboBox, JTextField classIdField, JTextField classNameField, JTextField departmentIdField, JTextField departmentNameField, StudentSystem studentSystem, User user) {
         this.studentClient = studentClient;
         this.idField = idField;
         this.nameField = nameField;
         this.ageField = ageField;
-        this.genderField = genderField;
+        this.genderComboBox = genderComboBox;
         this.classIdField = classIdField;
         this.classNameField = classNameField;
         this.departmentIdField = departmentIdField;
@@ -44,7 +44,7 @@ public class AddStudentButton {
                     String id = idField.getText();
                     String name = nameField.getText();
                     int age = Integer.parseInt(ageField.getText());
-                    String gender = genderField.getText();
+                    String gender = (String) genderComboBox.getSelectedItem();
                     String classId = classIdField.getText();
                     String className = classNameField.getText();
                     String departmentId = departmentIdField.getText();

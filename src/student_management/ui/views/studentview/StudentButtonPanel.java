@@ -24,7 +24,7 @@ public class StudentButtonPanel {
                 inputPanel.getIdField(),
                 inputPanel.getNameField(),
                 inputPanel.getAgeField(),
-                inputPanel.getGenderField(),
+                inputPanel.getGenderComboBox(),
                 inputPanel.getClassIdField(),
                 inputPanel.getClassNameField(),
                 inputPanel.getDepartmentIdField(),

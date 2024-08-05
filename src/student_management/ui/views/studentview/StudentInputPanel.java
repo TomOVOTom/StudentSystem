@@ -8,7 +8,7 @@ public class StudentInputPanel {
     private JTextField idField;
     private JTextField nameField;
     private JTextField ageField;
-    private JTextField genderField;
+    private JComboBox<String> genderComboBox;
     private JTextField classIdField;
     private JTextField classNameField;
     private JTextField departmentIdField;
@@ -27,7 +27,7 @@ public class StudentInputPanel {
         idField = createTextField();
         nameField = createTextField();
         ageField = createTextField();
-        genderField = createTextField();
+        genderComboBox = createComboBox();
         classIdField = createTextField();
         classNameField = createTextField();
         departmentIdField = createTextField();
@@ -36,7 +36,7 @@ public class StudentInputPanel {
         addLabelAndField("学号:", idField, gbc, 0);
         addLabelAndField("姓名:", nameField, gbc, 1);
         addLabelAndField("年龄:", ageField, gbc, 2);
-        addLabelAndField("性别:", genderField, gbc, 3);
+        addLabelAndField("性别:", genderComboBox, gbc, 3);
         addLabelAndField("班级ID:", classIdField, gbc, 4);
         addLabelAndField("班级名称:", classNameField, gbc, 5);
         addLabelAndField("院系ID:", departmentIdField, gbc, 6);
@@ -49,7 +49,13 @@ public class StudentInputPanel {
         return field;
     }
 
-    private void addLabelAndField(String labelText, JTextField field, GridBagConstraints gbc, int gridy) {
+    private JComboBox<String> createComboBox() {
+        JComboBox<String> comboBox = new JComboBox<>(new String[]{"男", "女"});
+        comboBox.setPreferredSize(new Dimension(comboBox.getPreferredSize().width, 40));
+        return comboBox;
+    }
+
+    private void addLabelAndField(String labelText, JComponent field, GridBagConstraints gbc, int gridy) {
         gbc.gridx = 0;
         gbc.gridy = gridy;
         gbc.weightx = 0;
@@ -85,8 +91,8 @@ public class StudentInputPanel {
         return departmentIdField;
     }
 
-    public JTextField getGenderField() {
-        return genderField;
+    public JComboBox<String> getGenderComboBox() {
+        return genderComboBox;
     }
 
     public JTextField getClassNameField() {
