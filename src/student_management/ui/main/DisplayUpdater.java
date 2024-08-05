@@ -23,14 +23,22 @@ public class DisplayUpdater {
                     return studentClient.sendCommand("CLASS_QUERY_ALL_CLASSES", user);
                 case "课程管理":
                     return studentClient.sendCommand("COURSE_QUERY_ALL_COURSES", user);
-                // 添加其他管理功能的查询命令
+                case "教师管理":
+                    return studentClient.sendCommand("TEACHER_QUERY_ALL_TEACHERS", user);
+                case "成绩管理":
+                    return studentClient.sendCommand("GRADE_QUERY_ALL_GRADES", user);
+                case "院系管理":
+                    return studentClient.sendCommand("DEPARTMENT_QUERY_ALL_DEPARTMENTS", user);
+                case "用户管理":
+                    return studentClient.sendCommand("USER_QUERY_ALL_USERS", user);
                 default:
-                    return "未知标签页";
+                    return "未知标签页: " + tabTitle;
             }
         } catch (Exception e) {
-            System.err.println("更新显示时出错: " + e.getMessage());
-            JOptionPane.showMessageDialog(null, "无法获取信息，请检查服务器连接。", "错误", JOptionPane.ERROR_MESSAGE);
-            return "错误: " + e.getMessage();
+            String errorMessage = "更新显示时出错: " + e.getMessage();
+            System.err.println(errorMessage);
+            JOptionPane.showMessageDialog(null, "无法获取信息，请检查服务器连接。\n错误详情: " + e.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
+            return "错误: " + errorMessage;
         }
     }
 }

@@ -11,17 +11,31 @@ public class TeacherManager {
     private HashMap<String, Teacher> teachers;
     private Logger logger;
 
-    public TeacherManager(Logger logger) {
-        teachers = new HashMap<>();
-        loadTeachersFromFile();
-        this.logger = logger;
+   public TeacherManager(Logger logger) {
+    this.logger = logger;
+    logger.log("初始化 TeacherManager");
+    teachers = new HashMap<>();
+    loadTeachersFromFile();
+    logger.log("TeacherManager 初始化完成,加载了 " + teachers.size() + " 条教师记录");
+}
+
+    public void printAllTeachers() {
+        System.out.println("打印所有教师信息:");
+        for (Teacher teacher : teachers.values()) {
+            System.out.println(teacher);
+        }
     }
 
-    public void addTeacher(Teacher teacher) {
+   public void addTeacher(Teacher teacher) {
+    try {
         teachers.put(teacher.getId(), teacher);
         saveTeachersToFile();
         logger.log("添加老师: " + teacher.toString());
+    } catch (Exception e) {
+        logger.log("添加老师失败: " + e.getMessage());
+        e.printStackTrace();
     }
+}
 
     public void removeTeacher(String id) {
         teachers.remove(id);

@@ -9,10 +9,45 @@ public class Teacher implements Serializable {
     private String name;
     private String subject;
 
-    public Teacher(String id, String name, String subject) {
+    private int age;
+    private String gender;
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public String getDepartmentId() {
+        return departmentId;
+    }
+
+    public void setDepartmentId(String departmentId) {
+        this.departmentId = departmentId;
+    }
+
+    private String departmentId;
+
+
+
+
+    public Teacher(String id, String name, String subject, int age, String gender, String departmentId) {
         this.id = id;
         this.name = name;
         this.subject = subject;
+        this.age = age;
+        this.gender = gender;
+        this.departmentId = departmentId;
     }
 
     public String getId() {
@@ -45,6 +80,9 @@ public class Teacher implements Serializable {
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", subject='" + subject + '\'' +
+                ", age=" + age +
+                ", gender='" + gender + '\'' +
+                ", departmentId='" + departmentId + '\'' +
                 '}';
     }
 }

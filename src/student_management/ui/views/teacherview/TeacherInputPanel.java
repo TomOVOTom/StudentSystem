@@ -8,6 +8,9 @@ public class TeacherInputPanel {
     private JTextField teacherIdField;
     private JTextField teacherNameField;
     private JTextField teacherSubjectField;
+    private JTextField ageField;
+    private JComboBox<String> genderComboBox;
+    private JTextField departmentIdField;
 
     public TeacherInputPanel() {
         initComponents();
@@ -22,10 +25,16 @@ public class TeacherInputPanel {
         teacherIdField = createTextField();
         teacherNameField = createTextField();
         teacherSubjectField = createTextField();
+        ageField = createTextField();
+        genderComboBox = new JComboBox<>(new String[]{"男", "女"});
+        departmentIdField = createTextField();
 
         addLabelAndField("教师ID:", teacherIdField, gbc, 0);
         addLabelAndField("教师姓名:", teacherNameField, gbc, 1);
         addLabelAndField("教授科目:", teacherSubjectField, gbc, 2);
+        addLabelAndField("年龄:", ageField, gbc, 3);
+        addLabelAndField("性别:", genderComboBox, gbc, 4);
+        addLabelAndField("院系ID:", departmentIdField, gbc, 5);
     }
 
     private JTextField createTextField() {
@@ -34,7 +43,7 @@ public class TeacherInputPanel {
         return field;
     }
 
-    private void addLabelAndField(String labelText, JTextField field, GridBagConstraints gbc, int gridy) {
+    private void addLabelAndField(String labelText, JComponent field, GridBagConstraints gbc, int gridy) {
         gbc.gridx = 0;
         gbc.gridy = gridy;
         gbc.weightx = 0;
@@ -59,5 +68,16 @@ public class TeacherInputPanel {
 
     public JTextField getTeacherSubjectField() {
         return teacherSubjectField;
+    }
+    public JTextField getAgeField() {
+        return ageField;
+    }
+
+    public JComboBox<String> getGenderComboBox() {
+        return genderComboBox;
+    }
+
+    public JTextField getDepartmentIdField() {
+        return departmentIdField;
     }
 }

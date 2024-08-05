@@ -20,11 +20,14 @@ public class TeacherButtonPanel {
         panel = new JPanel(new GridLayout(2, 3, 5, 5));
 
         buttonHandler = new TeacherButtonHandler(
-                studentClient,
-                inputPanel.getTeacherIdField(),
-                inputPanel.getTeacherNameField(),
-                inputPanel.getTeacherSubjectField(),
-                studentSystem
+            studentClient,
+            inputPanel.getTeacherIdField(),
+            inputPanel.getTeacherNameField(),
+            inputPanel.getTeacherSubjectField(),
+            inputPanel.getAgeField(),
+            inputPanel.getGenderComboBox(),
+            inputPanel.getDepartmentIdField(),
+            studentSystem
         );
 
         panel.add(buttonHandler.createAddTeacherButton());

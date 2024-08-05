@@ -24,9 +24,13 @@ public class RemoveTeacherButton {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String id = idField.getText();
-                String response = studentClient.sendCommand("TEACHER_REMOVE_TEACHER", id);
-                JOptionPane.showMessageDialog(studentSystem, response);
-                studentSystem.updateDisplay();
+                if (!id.isEmpty()) {
+                    String response = studentClient.sendCommand("TEACHER_REMOVE_TEACHER", id);
+                    JOptionPane.showMessageDialog(studentSystem, response);
+                    studentSystem.updateDisplay();
+                } else {
+                    JOptionPane.showMessageDialog(studentSystem, "请输入老师编号");
+                }
             }
         });
         return removeTeacherButton;

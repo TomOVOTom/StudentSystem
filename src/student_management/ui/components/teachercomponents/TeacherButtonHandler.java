@@ -10,18 +10,24 @@ public class TeacherButtonHandler {
     private JTextField teacherIdField;
     private JTextField teacherNameField;
     private JTextField teacherSubjectField;
+    private JTextField ageField;
+    private JComboBox<String> genderComboBox;
+    private JTextField departmentIdField;
     private StudentSystem studentSystem;
 
-    public TeacherButtonHandler(StudentClient studentClient, JTextField teacherIdField, JTextField teacherNameField, JTextField teacherSubjectField, StudentSystem studentSystem) {
+    public TeacherButtonHandler(StudentClient studentClient, JTextField teacherIdField, JTextField teacherNameField, JTextField teacherSubjectField, JTextField ageField, JComboBox<String> genderComboBox, JTextField departmentIdField, StudentSystem studentSystem) {
         this.studentClient = studentClient;
         this.teacherIdField = teacherIdField;
         this.teacherNameField = teacherNameField;
         this.teacherSubjectField = teacherSubjectField;
+        this.ageField = ageField;
+        this.genderComboBox = genderComboBox;
+        this.departmentIdField = departmentIdField;
         this.studentSystem = studentSystem;
     }
 
     public JButton createAddTeacherButton() {
-        return new AddTeacherButton(studentClient, teacherIdField, teacherNameField, teacherSubjectField, studentSystem).createButton();
+        return new AddTeacherButton(studentClient, teacherIdField, teacherNameField, teacherSubjectField, ageField, genderComboBox, departmentIdField, studentSystem).createButton();
     }
 
     public JButton createRemoveTeacherButton() {
@@ -29,7 +35,7 @@ public class TeacherButtonHandler {
     }
 
     public JButton createUpdateTeacherButton() {
-        return new UpdateTeacherButton(studentClient, teacherIdField, teacherNameField, teacherSubjectField, studentSystem).createButton();
+        return new UpdateTeacherButton(studentClient, teacherIdField, teacherNameField, teacherSubjectField, ageField, genderComboBox, departmentIdField, studentSystem).createButton();
     }
 
     public JButton createQueryTeacherButton() {
@@ -42,6 +48,9 @@ public class TeacherButtonHandler {
             teacherIdField.setText("");
             teacherNameField.setText("");
             teacherSubjectField.setText("");
+            ageField.setText("");
+            genderComboBox.setSelectedIndex(0);
+            departmentIdField.setText("");
         });
         return clearButton;
     }

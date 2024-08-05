@@ -12,9 +12,9 @@ public class GradeButtonPanel {
     private JPanel panel;
     private GradeButtonHandler buttonHandler;
 
-    public GradeButtonPanel(StudentClient studentClient, GradeInputPanel inputPanel, StudentSystem studentSystem, User user) {
-        initComponents(studentClient, inputPanel, studentSystem, user);
-    }
+   public GradeButtonPanel(StudentClient studentClient, GradeInputPanel inputPanel, StudentSystem studentSystem, User user) {
+    initComponents(studentClient, inputPanel, studentSystem, user);
+}
 
     private void initComponents(StudentClient studentClient, GradeInputPanel inputPanel, StudentSystem studentSystem, User user) {
         panel = new JPanel(new GridLayout(2, 3, 5, 5));

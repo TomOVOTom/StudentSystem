@@ -2,6 +2,8 @@ package student_management.ui.main;
 
 import student_management.client.StudentClient;
 import student_management.model.entity.User;
+import student_management.model.manager.TeacherManager;
+import student_management.util.commonutil.ConsoleLogger;
 import student_management.util.excel.ExcelFileManager;
 
 import javax.swing.*;
@@ -20,6 +22,7 @@ public class StudentSystem extends JFrame {
         System.out.println("创建 StudentSystem 实例，用户：" + user.getUsername());
         try {
             ExcelFileManager.ensureExcelFilesExist();
+            System.out.println("Excel 文件初始化完成");
             this.studentClient = new StudentClient("localhost", 12345);
             this.user = user;
             initComponents();
