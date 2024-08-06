@@ -1,6 +1,7 @@
 package student_management.ui.components.coursecomponents;
 
 import student_management.client.StudentClient;
+import student_management.model.entity.Course;
 import student_management.model.entity.User;
 import student_management.ui.main.StudentSystem;
 
@@ -57,20 +58,21 @@ public class CourseButtonHandler {
         return removeCourseButton;
     }
 
-    public JButton createUpdateCourseButton() {
-        JButton updateCourseButton = new JButton("更新课程");
-        updateCourseButton.addActionListener(e -> {
-            String courseId = courseIdField.getText();
-            String courseName = courseNameField.getText();
-            String teacher = teacherField.getText();
-            String gradingSystem = (String) gradingSystemComboBox.getSelectedItem();
-            String credits = creditsField.getText();
-            String response = studentClient.sendCommand("COURSE_UPDATE", user, courseId, courseName, teacher, gradingSystem, credits);
-            JOptionPane.showMessageDialog(studentSystem, response);
-            studentSystem.updateDisplay();
-        });
-        return updateCourseButton;
-    }
+  public JButton createUpdateCourseButton() {
+    JButton updateCourseButton = new JButton("更新课程");
+    updateCourseButton.addActionListener(e -> {
+        String courseId = courseIdField.getText();
+        String courseName = courseNameField.getText();
+        String teacherId = teacherField.getText();
+        String gradingSystem = (String) gradingSystemComboBox.getSelectedItem();
+        String credits = creditsField.getText();
+        Course updatedCourse = new Course(courseId, courseName, teacherId, gradingSystem, Float.parseFloat(credits));
+        String response = studentClient.sendCommand("COURSE_UPDATE", user, updatedCourse);
+        JOptionPane.showMessageDialog(studentSystem, response);
+        studentSystem.updateDisplay();
+    });
+    return updateCourseButton;
+}
 
     public JButton createQueryCourseButton() {
         JButton queryCourseButton = new JButton("查询课程");

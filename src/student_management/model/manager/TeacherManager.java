@@ -43,13 +43,13 @@ public class TeacherManager {
         logger.log("删除老师: " + id);
     }
 
-    public void updateTeacher(String id, String name, String subject) {
-        Teacher teacher = teachers.get(id);
-        if (teacher != null) {
-            teacher.setName(name);
-            teacher.setSubject(subject);
+    public void updateTeacher(Teacher teacher) {
+        if (teachers.containsKey(teacher.getId())) {
+            teachers.put(teacher.getId(), teacher);
             saveTeachersToFile();
-            logger.log("更新老师: " + id);
+            logger.log("更新老师: " + teacher.getId());
+        } else {
+            logger.log("更新老师失败: 未找到ID为 " + teacher.getId() + " 的老师");
         }
     }
 
@@ -72,5 +72,13 @@ public class TeacherManager {
     public String queryTeacher(String id) {
         Teacher teacher = getTeacher(id);
         return teacher != null ? teacher.toString() : "老师未找到";
+    }
+
+    public String queryAllTeachers() {
+        StringBuilder result = new StringBuilder();
+        for (Teacher teacher : teachers.values()) {
+            result.append(teacher.toString()).append("\n");
+        }
+        return result.toString();
     }
 }

@@ -106,20 +106,15 @@ public class CourseHandler {
         return "课程删除成功";
     }
 
-    private String handleUpdateCourse(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
-        if (!user.getRole().equals("admin")) {
-            throw new SecurityException("无权限操作");
-        }
-        String courseId = (String) ois.readObject();
-        String courseName = (String) ois.readObject();
-        String teacherId = (String) ois.readObject();
-        String gradingSystem = (String) ois.readObject();
-        float credits = (float) ois.readObject();
-        Course course = new Course(courseId, courseName, teacherId, gradingSystem, credits);
-        courseManager.updateCourse(course, user);
-        logger.log("用户 " + user.getUsername() + " 更新了课程: " + courseId);
-        return "课程更新成功";
+   private String handleUpdateCourse(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
+    if (!user.getRole().equals("admin")) {
+        throw new SecurityException("无权限操作");
     }
+    Course course = (Course) ois.readObject();
+    courseManager.updateCourse(course, user);
+    logger.log("用户 " + user.getUsername() + " 更新了课程: " + course.getCourseId());
+    return "课程更新成功";
+}
 
     private String handleQueryCourse(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
         String courseId = (String) ois.readObject();

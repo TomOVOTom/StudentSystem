@@ -9,11 +9,12 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) {
+        System.out.println("当前工作目录: " + System.getProperty("user.dir"));
         SwingUtilities.invokeLater(() -> {
             try {
                 Logger logger = new ConsoleLogger();
                 UserManager userManager = new UserManager(logger);
-                userManager.initializeDefaultUsers();
+                // 移除了 userManager.initializeDefaultUsers() 调用
                 LoginDialog loginDialog = new LoginDialog(null, userManager);
                 loginDialog.setVisible(true);
                 User user = loginDialog.getUser();

@@ -6,12 +6,16 @@ import student_management.util.commonutil.Logger;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.util.List;
+import java.util.stream.Collectors;
 
 public class UserHandler {
     private UserManager userManager;
+    private Logger logger;
 
     public UserHandler(UserManager userManager, Logger logger) {
         this.userManager = userManager;
+        this.logger = logger;
     }
 
     public String handleCommand(String command, ObjectInputStream ois) throws IOException, ClassNotFoundException {
@@ -27,6 +31,8 @@ public class UserHandler {
                 return updateUser(ois);
             case "QUERY":
                 return queryUser(ois);
+            case "QUERY_ALL":
+                return queryAllUsers(ois);
             default:
                 return "未知的用户命令";
         }
@@ -51,8 +57,31 @@ public class UserHandler {
     }
 
     private String queryUser(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        User currentUser = (User) ois.readObject();
         String username = (String) ois.readObject();
+
+        logger.log("查询用户. 当前用户: " + currentUser.getUsername() + ", 查询用户名: " + username);
+
+        if (!currentUser.getRole().equals("admin")) {
+            return "错误: 只有管理员可以查询用户信息";
+        }
+
         User user = userManager.getUser(username);
-        return user != null ? user.toString() : "用户不存在";
+        return user != null ? user.toString() : "未找到用户: " + username;
     }
+
+    private String queryAllUsers(ObjectInputStream ois) throws IOException, ClassNotFoundException {
+        User currentUser = (User) ois.readObject();
+
+        if (!currentUser.getRole().equals("admin")) {
+            return "错误: 只有管理员可以查询所有用户信息";
+        }
+        List<User> allUsers = userManager.getAllUsers();
+        logger.log("查询所有用户,总数: " + allUsers.size());
+        return allUsers.stream()
+                .map(User::toString)
+                .collect(Collectors.joining("\n"));
+    }
+
+
 }

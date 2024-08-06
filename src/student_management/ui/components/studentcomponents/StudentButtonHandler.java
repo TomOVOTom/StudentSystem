@@ -1,6 +1,7 @@
 package student_management.ui.components.studentcomponents;
 
 import student_management.client.StudentClient;
+import student_management.model.entity.Student;
 import student_management.model.entity.User;
 import student_management.ui.main.StudentSystem;
 
@@ -33,20 +34,67 @@ public StudentButtonHandler(StudentClient studentClient, JTextField idField, JTe
         this.user = user;
     }
 
-    public JButton createAddStudentButton() {
-        return new AddStudentButton(studentClient, idField, nameField, ageField, genderComboBox, classIdField, classNameField, departmentIdField, departmentNameField, studentSystem, user).createButton();
+     public JButton createAddStudentButton() {
+        JButton addButton = new JButton("添加学生");
+        addButton.addActionListener(e -> {
+            try {
+                Student student = createStudentFromFields();
+                String response = studentClient.sendCommand("STUDENT_ADD_STUDENT", user, student);
+                JOptionPane.showMessageDialog(studentSystem, response);
+                studentSystem.updateDisplay();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(studentSystem, "添加学生失败: " + ex.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        return addButton;
     }
 
     public JButton createRemoveStudentButton() {
-        return new RemoveStudentButton(studentClient, idField, studentSystem, user).createButton();
+        JButton removeButton = new JButton("删除学生");
+        removeButton.addActionListener(e -> {
+            String id = idField.getText();
+            String response = studentClient.sendCommand("STUDENT_REMOVE_STUDENT", user, id);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return removeButton;
     }
 
     public JButton createUpdateStudentButton() {
-        return new UpdateStudentButton(studentClient, idField, nameField, ageField, genderComboBox, classIdField, classNameField, departmentIdField, departmentNameField, studentSystem, user).createButton();
+        JButton updateButton = new JButton("更新学生");
+        updateButton.addActionListener(e -> {
+            try {
+                Student student = createStudentFromFields();
+                String response = studentClient.sendCommand("STUDENT_UPDATE_STUDENT", user, student);
+                JOptionPane.showMessageDialog(studentSystem, response);
+                studentSystem.updateDisplay();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(studentSystem, "更新学生失败: " + ex.getMessage(), "错误", JOptionPane.ERROR_MESSAGE);
+            }
+        });
+        return updateButton;
     }
 
     public JButton createQueryStudentButton() {
-        return new QueryStudentButton(studentClient, idField, studentSystem).createButton();
+        JButton queryButton = new JButton("查询学生");
+        queryButton.addActionListener(e -> {
+            String id = idField.getText();
+            String response = studentClient.sendCommand("STUDENT_QUERY_STUDENT", user, id);
+            JOptionPane.showMessageDialog(studentSystem, response);
+        });
+        return queryButton;
+    }
+
+    private Student createStudentFromFields() {
+        String id = idField.getText();
+        String name = nameField.getText();
+        int age = Integer.parseInt(ageField.getText());
+        String gender = (String) genderComboBox.getSelectedItem();
+        String classId = classIdField.getText();
+        String className = classNameField.getText();
+        String departmentId = departmentIdField.getText();
+        String departmentName = departmentNameField.getText();
+        return new Student(id, name, age, gender, classId, className, departmentId, departmentName);
     }
 
     public JButton createClearStudentFieldsButton() {

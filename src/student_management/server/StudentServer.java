@@ -34,7 +34,7 @@ public class StudentServer {
         UserManager userManager = new UserManager(logger);
         studentCourseManager = new StudentCourseManager(logger);
 
-        StudentHandler studentHandler = new StudentHandler(studentManager, courseHandler, logger);
+        StudentHandler studentHandler = new StudentHandler(studentManager, logger);
         TeacherHandler teacherHandler = new TeacherHandler(teacherManager, logger);
         ClassHandler classHandler = new ClassHandler(classManager, logger);
         DepartmentHandler departmentHandler = new DepartmentHandler(departmentManager, logger);

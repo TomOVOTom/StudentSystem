@@ -10,12 +10,10 @@ import java.io.ObjectInputStream;
 
 public class StudentHandler {
     private StudentManager studentManager;
-    private CourseHandler courseHandler;
     private Logger logger;
 
-    public StudentHandler(StudentManager studentManager, CourseHandler courseHandler, Logger logger) {
+    public StudentHandler(StudentManager studentManager, Logger logger) {
         this.studentManager = studentManager;
-        this.courseHandler = courseHandler;
         this.logger = logger;
     }
 
@@ -33,12 +31,7 @@ public class StudentHandler {
                     return handleQueryStudent(ois, user);
                 case "STUDENT_QUERY_ALL_STUDENTS":
                     return handleQueryAllStudents(user);
-                case "STUDENT_ADD_COURSE":
-                case "STUDENT_REMOVE_COURSE":
-                case "STUDENT_UPDATE_COURSE":
-                case "STUDENT_QUERY_COURSE":
-                    return courseHandler.handleCommand(command, ois);
-                default:
+                    default:
                     return "未知命令";
             }
         } catch (Exception e) {
@@ -47,12 +40,12 @@ public class StudentHandler {
         }
     }
 
-    private String handleAddStudent(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
-        Student student = readStudentFromStream(ois);
-        studentManager.addStudent(student, user);
-        logger.log("用户 " + user.getUsername() + " 添加了学生: " + student.getId());
-        return "学生添加成功";
-    }
+   private String handleAddStudent(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
+    Student student = (Student) ois.readObject();
+    studentManager.addStudent(student, user);
+    logger.log("用户 " + user.getUsername() + " 添加了学生: " + student.getId());
+    return "学生添加成功";
+}
 
     private String handleRemoveStudent(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
         String id = (String) ois.readObject();
@@ -62,7 +55,7 @@ public class StudentHandler {
     }
 
     private String handleUpdateStudent(ObjectInputStream ois, User user) throws IOException, ClassNotFoundException {
-        Student student = readStudentFromStream(ois);
+        Student student = (Student) ois.readObject();
         studentManager.updateStudent(student, user);
         logger.log("用户 " + user.getUsername() + " 更新了学生: " + student.getId());
         return "学生更新成功";
@@ -79,15 +72,4 @@ public class StudentHandler {
         return studentManager.queryAllStudents();
     }
 
-    private Student readStudentFromStream(ObjectInputStream ois) throws IOException, ClassNotFoundException {
-        String id = (String) ois.readObject();
-        String name = (String) ois.readObject();
-        int age = (int) ois.readObject();
-        String gender = (String) ois.readObject();
-        String classId = (String) ois.readObject();
-        String className = (String) ois.readObject();
-        String departmentId = (String) ois.readObject();
-        String departmentName = (String) ois.readObject();
-        return new Student(id, name, age, gender, classId, className, departmentId, departmentName);
-    }
 }

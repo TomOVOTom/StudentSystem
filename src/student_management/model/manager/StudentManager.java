@@ -21,7 +21,7 @@ public class StudentManager {
 
     public void addStudent(Student student, User user) {
         if (!user.getRole().equals("admin")) {
-            throw new SecurityException("无权限操作");
+            throw new SecurityException("无权限添加学生");
         }
         students.add(student);
         saveStudentsToFile();

@@ -1,5 +1,7 @@
 package student_management.ui.views.userview;
 
+import student_management.ui.layout.UIComponentFactory;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -7,7 +9,7 @@ public class UserInputPanel {
     private JPanel panel;
     private JTextField usernameField;
     private JPasswordField passwordField;
-    private JTextField roleField;
+    private JComboBox<String> roleComboBox;
 
     public UserInputPanel() {
         initComponents();
@@ -19,28 +21,16 @@ public class UserInputPanel {
         gbc.insets = new Insets(10, 10, 10, 10);
         gbc.fill = GridBagConstraints.BOTH;
 
-        usernameField = createTextField();
-        passwordField = createPasswordField();
-        roleField = createTextField();
+        usernameField = UIComponentFactory.createTextField();
+        passwordField = UIComponentFactory.createPasswordField();
+        roleComboBox = UIComponentFactory.createComboBox(new String[]{"admin", "teacher", "student"});
 
         addLabelAndField("用户名:", usernameField, gbc, 0);
         addLabelAndField("密码:", passwordField, gbc, 1);
-        addLabelAndField("角色:", roleField, gbc, 2);
+        addLabelAndField("角色:", roleComboBox, gbc, 2);
     }
 
-    private JTextField createTextField() {
-        JTextField field = new JTextField(20);
-        field.setPreferredSize(new Dimension(field.getPreferredSize().width, 40));
-        return field;
-    }
-
-    private JPasswordField createPasswordField() {
-        JPasswordField field = new JPasswordField(20);
-        field.setPreferredSize(new Dimension(field.getPreferredSize().width, 40));
-        return field;
-    }
-
-    private void addLabelAndField(String labelText, JTextField field, GridBagConstraints gbc, int gridy) {
+    private void addLabelAndField(String labelText, JComponent field, GridBagConstraints gbc, int gridy) {
         gbc.gridx = 0;
         gbc.gridy = gridy;
         gbc.weightx = 0;
@@ -63,7 +53,7 @@ public class UserInputPanel {
         return passwordField;
     }
 
-    public JTextField getRoleField() {
-        return roleField;
+    public JComboBox<String> getRoleComboBox() {
+        return roleComboBox;
     }
 }

@@ -1,6 +1,7 @@
 package student_management.ui.components.departmentcomponents;
 
 import student_management.client.StudentClient;
+import student_management.model.entity.Department;
 import student_management.model.entity.User;
 import student_management.ui.main.StudentSystem;
 
@@ -22,19 +23,50 @@ public class DepartmentButtonHandler {
     }
 
     public JButton createAddDepartmentButton() {
-        return new AddDepartmentButton(studentClient, departmentIdField, departmentNameField, studentSystem, user).createButton();
+        JButton addButton = new JButton("添加院系");
+        addButton.addActionListener(e -> {
+            String departmentId = departmentIdField.getText();
+            String departmentName = departmentNameField.getText();
+            Department newDepartment = new Department(departmentId, departmentName);
+            String response = studentClient.sendCommand("DEPARTMENT_ADD_DEPARTMENT", user, newDepartment);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return addButton;
     }
 
     public JButton createRemoveDepartmentButton() {
-        return new RemoveDepartmentButton(studentClient, departmentIdField, studentSystem, user).createButton();
+        JButton removeButton = new JButton("删除院系");
+        removeButton.addActionListener(e -> {
+            String departmentId = departmentIdField.getText();
+            String response = studentClient.sendCommand("DEPARTMENT_REMOVE_DEPARTMENT", user, departmentId);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return removeButton;
     }
 
     public JButton createUpdateDepartmentButton() {
-        return new UpdateDepartmentButton(studentClient, departmentIdField, departmentNameField, studentSystem, user).createButton();
+        JButton updateButton = new JButton("更新院系");
+        updateButton.addActionListener(e -> {
+            String departmentId = departmentIdField.getText();
+            String departmentName = departmentNameField.getText();
+            Department updatedDepartment = new Department(departmentId, departmentName);
+            String response = studentClient.sendCommand("DEPARTMENT_UPDATE_DEPARTMENT", user, updatedDepartment);
+            JOptionPane.showMessageDialog(studentSystem, response);
+            studentSystem.updateDisplay();
+        });
+        return updateButton;
     }
 
     public JButton createQueryDepartmentButton() {
-        return new QueryDepartmentButton(studentClient, departmentIdField, studentSystem, user).createButton();
+        JButton queryButton = new JButton("查询院系");
+        queryButton.addActionListener(e -> {
+            String departmentId = departmentIdField.getText();
+            String response = studentClient.sendCommand("DEPARTMENT_QUERY_DEPARTMENT", user, departmentId);
+            JOptionPane.showMessageDialog(studentSystem, response);
+        });
+        return queryButton;
     }
 
     public JButton createClearDepartmentFieldsButton() {

@@ -17,9 +17,10 @@ public class UIComponentFactory {
         return comboBox;
     }
 
-    public static JButton createButton(String text) {
-        JButton button = new JButton(text);
-        button.setPreferredSize(new Dimension(180, 40));
-        return button;
-    }
+
+public static JPasswordField createPasswordField() {
+    JPasswordField field = new JPasswordField(20);
+    field.setPreferredSize(new Dimension(field.getPreferredSize().width, 40));
+    return field;
+}
 }

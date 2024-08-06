@@ -30,7 +30,8 @@ public class DisplayUpdater {
                 case "院系管理":
                     return studentClient.sendCommand("DEPARTMENT_QUERY_ALL_DEPARTMENTS", user);
                 case "用户管理":
-                    return studentClient.sendCommand("USER_QUERY_ALL_USERS", user);
+                    // 移除查询所有用户的功能
+                    return "用户管理功能已更新，不再支持查询所有用户。";
                 default:
                     return "未知标签页: " + tabTitle;
             }

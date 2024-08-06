@@ -23,7 +23,7 @@ public class UserButtonPanel {
                 studentClient,
                 inputPanel.getUsernameField(),
                 inputPanel.getPasswordField(),
-                inputPanel.getRoleField(),
+                inputPanel.getRoleComboBox(),
                 studentSystem,
                 user
         );

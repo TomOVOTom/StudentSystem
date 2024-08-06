@@ -18,8 +18,7 @@ public class ExcelFileManager {
         FILE_HEADERS.put("courses.xlsx", new String[]{"课程ID", "课程名称", "教师ID", "评分方式", "学分"});
         FILE_HEADERS.put("grades.xlsx", new String[]{"学生ID", "课程ID", "成绩"});
         FILE_HEADERS.put("students.xlsx", new String[]{"学号", "姓名", "年龄", "性别", "班级ID", "班级", "院系ID", "院系"});
-        FILE_HEADERS.put("users.xlsx", new String[]{"用户名", "密码", "角色"});
-        FILE_HEADERS.put("student_classes.xlsx", new String[]{"班级ID", "班级名称", "院系ID"});
+//        FILE_HEADERS.put("student_classes.xlsx", new String[]{"班级ID", "班级名称", "院系ID"});
         FILE_HEADERS.put("departments.xlsx", new String[]{"院系ID", "院系名称"});
         FILE_HEADERS.put("teachers.xlsx", new String[]{"教师ID", "姓名", "教授科目", "年龄", "性别", "院系ID"});
         FILE_HEADERS.put("student_courses.xlsx", new String[]{"学生ID", "课程ID"});

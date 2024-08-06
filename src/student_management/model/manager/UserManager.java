@@ -4,24 +4,34 @@ import student_management.model.entity.User;
 import student_management.util.commonutil.Logger;
 import student_management.util.excelutil.UserExcelUtil;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Optional;
 
 public class UserManager {
     private HashMap<String, User> users;
     private Logger logger;
 
-    public UserManager(Logger logger) {
-        this.logger = logger;
-        users = new HashMap<>();
-        loadUsersFromFile();
-        logger.log("UserManager 初始化完成");
-    }
+  public UserManager(Logger logger) {
+    this.logger = logger;
+    loadUsersFromFile();
+    logger.log("UserManager 初始化完成,加载了 " + users.size() + " 个用户");
+}
 
     public void addUser(User user) {
         users.put(user.getUsername(), user);
         saveUsersToFile();
         logger.log("添加用户: " + user.getUsername());
+
+        // 立即重新加载并验证
+        loadUsersFromFile();
+        if (users.containsKey(user.getUsername())) {
+            logger.log("用户成功添加并验证: " + user.getUsername());
+        } else {
+            logger.log("警告：用户添加失败或未能验证: " + user.getUsername());
+        }
     }
 
     public void removeUser(String username) {
@@ -57,14 +67,10 @@ public class UserManager {
 
     private void saveUsersToFile() {
         UserExcelUtil.saveUsersToFile(users);
-        logger.log("保存用户数据到文件");
+        logger.log("保存用户数据到文件,共 " + users.size() + " 个用户");
     }
 
-    public void initializeDefaultUsers() {
-        if (users.isEmpty()) {
-            addUser(new User("admin", "admin123", "admin"));
-            addUser(new User("user", "user123", "user"));
-            logger.log("初始化默认用户");
-        }
+    public List<User> getAllUsers() {
+        return new ArrayList<>(users.values());
     }
 }

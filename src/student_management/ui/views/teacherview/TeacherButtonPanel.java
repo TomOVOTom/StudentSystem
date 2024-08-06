@@ -27,7 +27,8 @@ public class TeacherButtonPanel {
             inputPanel.getAgeField(),
             inputPanel.getGenderComboBox(),
             inputPanel.getDepartmentIdField(),
-            studentSystem
+            studentSystem,
+                user
         );
 
         panel.add(buttonHandler.createAddTeacherButton());

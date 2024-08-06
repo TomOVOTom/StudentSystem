@@ -12,3 +12,637 @@
 2024-08-05 22:56:28 - 课程保存到Excel文件完成
 2024-08-05 22:57:20 - 开始保存课程到Excel文件
 2024-08-05 22:57:20 - 课程保存到Excel文件完成
+2024-08-06 00:03:59 - 开始保存课程到Excel文件
+2024-08-06 00:03:59 - 课程保存到Excel文件完成
+2024-08-06 00:08:14 - 开始保存课程到Excel文件
+2024-08-06 00:08:14 - 课程保存到Excel文件完成
+2024-08-06 00:10:54 - 开始保存课程到Excel文件
+2024-08-06 00:10:54 - 课程保存到Excel文件完成
+2024-08-06 00:11:36 - 开始保存课程到Excel文件
+2024-08-06 00:11:36 - 课程保存到Excel文件完成
+2024-08-06 00:11:39 - 开始保存课程到Excel文件
+2024-08-06 00:11:39 - 课程保存到Excel文件完成
+2024-08-06 00:11:48 - 开始保存课程到Excel文件
+2024-08-06 00:11:48 - 课程保存到Excel文件完成
+2024-08-06 04:11:02 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:11:02 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:11:02 - 用户文件存在,开始读取数据
+2024-08-06 04:11:02 - 读取到用户数据: admin, admin
+2024-08-06 04:11:02 - 从文件加载了 1 条用户记录
+2024-08-06 04:14:05 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:14:05 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:14:05 - 用户文件存在,开始读取数据
+2024-08-06 04:14:05 - 读取到用户数据: admin, admin
+2024-08-06 04:14:05 - 从文件加载了 1 条用户记录
+2024-08-06 04:14:26 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:14:26 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:14:26 - 文件是否存在: true
+2024-08-06 04:14:26 - 文件是否可写: true
+2024-08-06 04:14:26 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 04:14:26 - 开始验证保存的用户数据
+2024-08-06 04:14:26 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:14:26 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:14:26 - 用户文件存在,开始读取数据
+2024-08-06 04:14:26 - 读取到用户数据: admin, admin
+2024-08-06 04:14:26 - 从文件加载了 1 条用户记录
+2024-08-06 04:14:26 - 重新加载的用户数: 1
+2024-08-06 04:14:26 - 错误：重新加载的用户数据与原始数据不匹配
+2024-08-06 04:18:10 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:18:10 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:18:10 - 用户文件存在,开始读取数据
+2024-08-06 04:18:10 - 读取到用户数据: admin, admin
+2024-08-06 04:18:10 - 从文件加载了 1 条用户记录
+2024-08-06 04:18:45 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:18:45 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:18:45 - 文件是否存在: true
+2024-08-06 04:18:45 - 文件是否可写: true
+2024-08-06 04:18:45 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 04:18:45 - 开始验证保存的用户数据
+2024-08-06 04:18:45 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:18:45 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:18:45 - 用户文件存在,开始读取数据
+2024-08-06 04:18:45 - 读取到用户数据: admin, admin
+2024-08-06 04:18:45 - 从文件加载了 1 条用户记录
+2024-08-06 04:18:45 - 重新加载的用户数: 1
+2024-08-06 04:18:45 - 原始用户数: 1
+2024-08-06 04:18:45 - 错误：用户数据不匹配 admin
+2024-08-06 04:18:45 - 原始数据: User{username='admin', role='admin'}
+2024-08-06 04:18:45 - 重新加载的数据: User{username='admin', role='admin'}
+2024-08-06 04:18:45 - 用户数据验证完成
+2024-08-06 04:43:47 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:43:47 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:43:47 - 用户文件存在,开始读取数据
+2024-08-06 04:43:47 - 读取到用户数据: admin, admin
+2024-08-06 04:43:47 - 从文件加载了 1 条用户记录
+2024-08-06 04:44:22 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:44:22 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:44:22 - 文件是否存在: true
+2024-08-06 04:44:22 - 文件是否可写: true
+2024-08-06 04:44:22 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 04:44:22 - 开始验证保存的用户数据
+2024-08-06 04:44:22 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:44:22 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:44:22 - 用户文件存在,开始读取数据
+2024-08-06 04:44:22 - 读取到用户数据: admin, admin
+2024-08-06 04:44:22 - 从文件加载了 1 条用户记录
+2024-08-06 04:44:22 - 重新加载的用户数: 1
+2024-08-06 04:44:22 - 原始用户数: 1
+2024-08-06 04:44:22 - 错误：用户数据不匹配 admin
+2024-08-06 04:44:22 - 原始数据: User{username='admin', role='admin'}
+2024-08-06 04:44:22 - 重新加载的数据: User{username='admin', role='admin'}
+2024-08-06 04:44:22 - 用户数据验证完成
+2024-08-06 04:50:26 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:50:26 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:50:26 - 用户文件存在,开始读取数据
+2024-08-06 04:50:26 - 读取到用户数据: admin, admin
+2024-08-06 04:50:27 - 从文件加载了 1 条用户记录
+2024-08-06 04:50:57 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:50:57 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:50:57 - 文件是否存在: true
+2024-08-06 04:50:57 - 文件是否可写: true
+2024-08-06 04:50:57 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 04:50:57 - 开始验证保存的用户数据
+2024-08-06 04:50:57 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:50:57 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:50:57 - 用户文件存在,开始读取数据
+2024-08-06 04:50:57 - 读取到用户数据: admin, admin
+2024-08-06 04:50:57 - 从文件加载了 1 条用户记录
+2024-08-06 04:50:57 - 重新加载的用户数: 1
+2024-08-06 04:50:57 - 原始用户数: 1
+2024-08-06 04:50:57 - 错误：用户数据不匹配 admin
+2024-08-06 04:50:57 - 原始数据: User{username='admin', role='admin'}
+2024-08-06 04:50:57 - 重新加载的数据: User{username='admin', role='admin'}
+2024-08-06 04:50:57 - 用户数据验证完成
+2024-08-06 04:50:57 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:50:57 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:50:57 - 用户文件存在,开始读取数据
+2024-08-06 04:50:57 - 读取到用户数据: admin, admin
+2024-08-06 04:50:57 - 从文件加载了 1 条用户记录
+2024-08-06 04:52:11 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:52:11 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:52:11 - 用户文件存在,开始读取数据
+2024-08-06 04:52:11 - 读取到用户数据: admin, admin
+2024-08-06 04:52:11 - 从文件加载了 1 条用户记录
+2024-08-06 04:52:39 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:52:39 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:52:39 - 文件是否存在: true
+2024-08-06 04:52:39 - 文件是否可写: true
+2024-08-06 04:52:39 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 04:52:39 - 开始验证保存的用户数据
+2024-08-06 04:52:39 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:52:39 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:52:39 - 用户文件存在,开始读取数据
+2024-08-06 04:52:39 - 读取到用户数据: admin, admin
+2024-08-06 04:52:39 - 从文件加载了 1 条用户记录
+2024-08-06 04:52:39 - 重新加载的用户数: 1
+2024-08-06 04:52:39 - 原始用户数: 1
+2024-08-06 04:52:39 - 用户数据验证完成
+2024-08-06 04:52:39 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:52:39 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 04:52:39 - 用户文件存在,开始读取数据
+2024-08-06 04:52:39 - 读取到用户数据: admin, admin
+2024-08-06 04:52:39 - 从文件加载了 1 条用户记录
+2024-08-06 04:58:24 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 04:58:24 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 04:58:24 - 用户文件存在,开始读取数据
+2024-08-06 04:58:24 - 读取到用户数据: admin, admin
+2024-08-06 04:58:24 - 读取到用户数据: user, user
+2024-08-06 04:58:24 - 从文件加载了 2 条用户记录
+2024-08-06 04:58:55 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 04:58:55 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 04:58:55 - 文件是否存在: true
+2024-08-06 04:58:55 - 文件是否可写: true
+2024-08-06 04:58:55 - 用户数据保存成功,共保存 2 条记录
+2024-08-06 04:58:55 - 开始验证保存的用户数据
+2024-08-06 04:58:55 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 04:58:55 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 04:58:55 - 用户文件存在,开始读取数据
+2024-08-06 04:58:55 - 读取到用户数据: admin, admin
+2024-08-06 04:58:55 - 读取到用户数据: user, user
+2024-08-06 04:58:55 - 从文件加载了 2 条用户记录
+2024-08-06 04:58:55 - 重新加载的用户数: 2
+2024-08-06 04:58:55 - 原始用户数: 2
+2024-08-06 04:58:55 - 用户数据验证完成
+2024-08-06 04:58:55 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 04:58:55 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 04:58:55 - 用户文件存在,开始读取数据
+2024-08-06 04:58:55 - 读取到用户数据: admin, admin
+2024-08-06 04:58:55 - 读取到用户数据: user, user
+2024-08-06 04:58:55 - 从文件加载了 2 条用户记录
+2024-08-06 05:03:37 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:03:37 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:03:37 - 文件是否存在: true
+2024-08-06 05:03:37 - 文件是否可写: true
+2024-08-06 05:03:38 - 用户数据保存成功,共保存 2 条记录
+2024-08-06 05:03:38 - 开始验证保存的用户数据
+2024-08-06 05:03:38 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:03:38 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:03:38 - 用户文件存在,开始读取数据
+2024-08-06 05:03:38 - 读取到用户数据: admin, admin
+2024-08-06 05:03:38 - 读取到用户数据: user, user
+2024-08-06 05:03:38 - 从文件加载了 2 条用户记录
+2024-08-06 05:03:38 - 重新加载的用户数: 2
+2024-08-06 05:03:38 - 原始用户数: 2
+2024-08-06 05:03:38 - 用户数据验证完成
+2024-08-06 05:03:38 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:03:38 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:03:38 - 用户文件存在,开始读取数据
+2024-08-06 05:03:38 - 读取到用户数据: admin, admin
+2024-08-06 05:03:38 - 读取到用户数据: user, user
+2024-08-06 05:03:38 - 从文件加载了 2 条用户记录
+2024-08-06 05:12:55 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:12:55 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:12:55 - 用户文件存在,开始读取数据
+2024-08-06 05:12:56 - 读取到用户数据: admin, admin
+2024-08-06 05:12:56 - 读取到用户数据: user, user
+2024-08-06 05:12:56 - 从文件加载了 2 条用户记录
+2024-08-06 05:13:27 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:13:27 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:13:27 - 文件是否存在: true
+2024-08-06 05:13:27 - 文件是否可写: true
+2024-08-06 05:13:27 - 用户数据保存成功,共保存 2 条记录
+2024-08-06 05:13:27 - 开始验证保存的用户数据
+2024-08-06 05:13:27 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:13:27 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:13:27 - 用户文件存在,开始读取数据
+2024-08-06 05:13:27 - 读取到用户数据: admin, admin
+2024-08-06 05:13:27 - 读取到用户数据: user, user
+2024-08-06 05:13:27 - 从文件加载了 2 条用户记录
+2024-08-06 05:13:27 - 重新加载的用户数: 2
+2024-08-06 05:13:27 - 原始用户数: 2
+2024-08-06 05:13:27 - 用户数据验证完成
+2024-08-06 05:13:27 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:13:27 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:13:27 - 用户文件存在,开始读取数据
+2024-08-06 05:13:27 - 读取到用户数据: admin, admin
+2024-08-06 05:13:27 - 读取到用户数据: user, user
+2024-08-06 05:13:27 - 从文件加载了 2 条用户记录
+2024-08-06 05:14:41 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:14:41 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:14:41 - 用户文件存在,开始读取数据
+2024-08-06 05:14:41 - 读取到用户数据: admin, admin
+2024-08-06 05:14:41 - 读取到用户数据: user, user
+2024-08-06 05:14:41 - 从文件加载了 2 条用户记录
+2024-08-06 05:14:49 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:14:49 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:14:49 - 用户文件存在,开始读取数据
+2024-08-06 05:14:49 - 读取到用户数据: admin, admin
+2024-08-06 05:14:49 - 读取到用户数据: user, user
+2024-08-06 05:14:49 - 从文件加载了 2 条用户记录
+2024-08-06 05:15:34 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:15:34 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:15:34 - 文件是否存在: true
+2024-08-06 05:15:34 - 文件是否可写: true
+2024-08-06 05:15:34 - 用户数据保存成功,共保存 2 条记录
+2024-08-06 05:15:34 - 开始验证保存的用户数据
+2024-08-06 05:15:34 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:15:34 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:15:34 - 用户文件存在,开始读取数据
+2024-08-06 05:15:35 - 读取到用户数据: admin, admin
+2024-08-06 05:15:35 - 读取到用户数据: user, user
+2024-08-06 05:15:35 - 从文件加载了 2 条用户记录
+2024-08-06 05:15:35 - 重新加载的用户数: 2
+2024-08-06 05:15:35 - 原始用户数: 2
+2024-08-06 05:15:35 - 用户数据验证完成
+2024-08-06 05:15:35 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:15:35 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:15:35 - 用户文件存在,开始读取数据
+2024-08-06 05:15:35 - 读取到用户数据: admin, admin
+2024-08-06 05:15:35 - 读取到用户数据: user, user
+2024-08-06 05:15:35 - 从文件加载了 2 条用户记录
+2024-08-06 05:22:15 - 开始从文件加载用户数据: users.xlsx
+2024-08-06 05:22:15 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:22:15 - 用户文件存在,开始读取数据
+2024-08-06 05:22:15 - 读取到用户数据: admin, admin
+2024-08-06 05:22:15 - 读取到用户数据: user, user
+2024-08-06 05:22:15 - 从文件加载了 2 条用户记录
+2024-08-06 05:37:26 - 开始从文件加载用户数据: users.xlsx
+2024-08-06 05:37:26 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:37:26 - 用户文件存在,开始读取数据
+2024-08-06 05:37:26 - 读取到用户数据: admin, admin
+2024-08-06 05:37:26 - 读取到用户数据: user, user
+2024-08-06 05:37:26 - 从文件加载了 2 条用户记录
+2024-08-06 05:37:57 - 开始保存用户数据到Excel文件: users.xlsx
+2024-08-06 05:37:57 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:37:57 - 文件是否存在: true
+2024-08-06 05:37:57 - 文件是否可写: true
+2024-08-06 05:37:57 - 用户数据保存成功,共保存 2 条记录
+2024-08-06 05:37:57 - 开始验证保存的用户数据
+2024-08-06 05:37:57 - 开始从文件加载用户数据: users.xlsx
+2024-08-06 05:37:57 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:37:57 - 用户文件存在,开始读取数据
+2024-08-06 05:37:58 - 读取到用户数据: admin, admin
+2024-08-06 05:37:58 - 读取到用户数据: user, user
+2024-08-06 05:37:58 - 从文件加载了 2 条用户记录
+2024-08-06 05:37:58 - 重新加载的用户数: 2
+2024-08-06 05:37:58 - 原始用户数: 2
+2024-08-06 05:37:58 - 用户数据验证完成
+2024-08-06 05:37:58 - 开始从文件加载用户数据: users.xlsx
+2024-08-06 05:37:58 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:37:58 - 用户文件存在,开始读取数据
+2024-08-06 05:37:58 - 读取到用户数据: admin, admin
+2024-08-06 05:37:58 - 读取到用户数据: user, user
+2024-08-06 05:37:58 - 从文件加载了 2 条用户记录
+2024-08-06 05:41:42 - 开始保存用户数据到Excel文件: users.xlsx
+2024-08-06 05:41:42 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:41:42 - 文件是否存在: true
+2024-08-06 05:41:42 - 文件是否可写: true
+2024-08-06 05:41:42 - 用户数据保存成功,共保存 2 条记录
+2024-08-06 05:41:42 - 开始验证保存的用户数据
+2024-08-06 05:41:42 - 开始从文件加载用户数据: users.xlsx
+2024-08-06 05:41:42 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:41:42 - 用户文件存在,开始读取数据
+2024-08-06 05:41:42 - 读取到用户数据: admin, admin
+2024-08-06 05:41:42 - 读取到用户数据: user, user
+2024-08-06 05:41:42 - 从文件加载了 2 条用户记录
+2024-08-06 05:41:42 - 重新加载的用户数: 2
+2024-08-06 05:41:42 - 原始用户数: 2
+2024-08-06 05:41:42 - 用户数据验证完成
+2024-08-06 05:41:42 - 开始从文件加载用户数据: users.xlsx
+2024-08-06 05:41:42 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 05:41:42 - 用户文件存在,开始读取数据
+2024-08-06 05:41:42 - 读取到用户数据: admin, admin
+2024-08-06 05:41:42 - 读取到用户数据: user, user
+2024-08-06 05:41:42 - 从文件加载了 2 条用户记录
+2024-08-06 05:41:59 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:41:59 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:41:59 - 用户文件存在,开始读取数据
+2024-08-06 05:41:59 - 读取到用户数据: admin, admin
+2024-08-06 05:41:59 - 从文件加载了 1 条用户记录
+2024-08-06 05:44:47 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:44:47 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:44:47 - 用户文件存在,开始读取数据
+2024-08-06 05:44:47 - 读取到用户数据: admin, admin
+2024-08-06 05:44:47 - 从文件加载了 1 条用户记录
+2024-08-06 05:46:49 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:46:49 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:46:49 - 用户文件存在,开始读取数据
+2024-08-06 05:46:49 - 读取到用户数据: admin, admin
+2024-08-06 05:46:49 - 从文件加载了 1 条用户记录
+2024-08-06 05:47:22 - 开始保存用户数据到Excel文件: ..\users.xlsx
+2024-08-06 05:47:22 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:47:22 - 文件是否存在: true
+2024-08-06 05:47:22 - 文件是否可写: true
+2024-08-06 05:47:23 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 05:47:23 - 开始验证保存的用户数据
+2024-08-06 05:47:23 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:47:23 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:47:23 - 用户文件存在,开始读取数据
+2024-08-06 05:47:23 - 读取到用户数据: admin, admin
+2024-08-06 05:47:23 - 从文件加载了 1 条用户记录
+2024-08-06 05:47:23 - 重新加载的用户数: 1
+2024-08-06 05:47:23 - 原始用户数: 1
+2024-08-06 05:47:23 - 用户数据验证完成
+2024-08-06 05:47:23 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:47:23 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:47:23 - 用户文件存在,开始读取数据
+2024-08-06 05:47:23 - 读取到用户数据: admin, admin
+2024-08-06 05:47:23 - 从文件加载了 1 条用户记录
+2024-08-06 05:51:45 - 开始保存用户数据到Excel文件: ..\users.xlsx
+2024-08-06 05:51:45 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:51:45 - 文件是否存在: true
+2024-08-06 05:51:45 - 文件是否可写: true
+2024-08-06 05:51:45 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 05:51:45 - 开始验证保存的用户数据
+2024-08-06 05:51:45 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:51:45 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:51:45 - 用户文件存在,开始读取数据
+2024-08-06 05:51:45 - 读取到用户数据: admin, admin
+2024-08-06 05:51:45 - 从文件加载了 1 条用户记录
+2024-08-06 05:51:45 - 重新加载的用户数: 1
+2024-08-06 05:51:45 - 原始用户数: 1
+2024-08-06 05:51:45 - 用户数据验证完成
+2024-08-06 05:51:45 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:51:45 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:51:45 - 用户文件存在,开始读取数据
+2024-08-06 05:51:45 - 读取到用户数据: admin, admin
+2024-08-06 05:51:45 - 从文件加载了 1 条用户记录
+2024-08-06 05:52:09 - 开始保存用户数据到Excel文件: ..\users.xlsx
+2024-08-06 05:52:09 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:09 - 文件是否存在: true
+2024-08-06 05:52:09 - 文件是否可写: true
+2024-08-06 05:52:09 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 05:52:09 - 开始验证保存的用户数据
+2024-08-06 05:52:09 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:52:09 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:09 - 用户文件存在,开始读取数据
+2024-08-06 05:52:09 - 读取到用户数据: admin, admin
+2024-08-06 05:52:09 - 从文件加载了 1 条用户记录
+2024-08-06 05:52:09 - 重新加载的用户数: 1
+2024-08-06 05:52:09 - 原始用户数: 1
+2024-08-06 05:52:09 - 用户数据验证完成
+2024-08-06 05:52:09 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:52:09 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:09 - 用户文件存在,开始读取数据
+2024-08-06 05:52:09 - 读取到用户数据: admin, admin
+2024-08-06 05:52:09 - 从文件加载了 1 条用户记录
+2024-08-06 05:52:16 - 开始保存用户数据到Excel文件: ..\users.xlsx
+2024-08-06 05:52:16 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:16 - 文件是否存在: true
+2024-08-06 05:52:16 - 文件是否可写: true
+2024-08-06 05:52:16 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 05:52:16 - 开始验证保存的用户数据
+2024-08-06 05:52:16 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:52:16 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:16 - 用户文件存在,开始读取数据
+2024-08-06 05:52:16 - 读取到用户数据: admin, admin
+2024-08-06 05:52:16 - 从文件加载了 1 条用户记录
+2024-08-06 05:52:16 - 重新加载的用户数: 1
+2024-08-06 05:52:16 - 原始用户数: 1
+2024-08-06 05:52:16 - 用户数据验证完成
+2024-08-06 05:52:16 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:52:16 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:16 - 用户文件存在,开始读取数据
+2024-08-06 05:52:16 - 读取到用户数据: admin, admin
+2024-08-06 05:52:16 - 从文件加载了 1 条用户记录
+2024-08-06 05:52:25 - 开始保存用户数据到Excel文件: ..\users.xlsx
+2024-08-06 05:52:25 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:25 - 文件是否存在: true
+2024-08-06 05:52:25 - 文件是否可写: true
+2024-08-06 05:52:25 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 05:52:25 - 开始验证保存的用户数据
+2024-08-06 05:52:25 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:52:25 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:25 - 用户文件存在,开始读取数据
+2024-08-06 05:52:25 - 读取到用户数据: admin, admin
+2024-08-06 05:52:25 - 从文件加载了 1 条用户记录
+2024-08-06 05:52:25 - 重新加载的用户数: 1
+2024-08-06 05:52:25 - 原始用户数: 1
+2024-08-06 05:52:25 - 用户数据验证完成
+2024-08-06 05:52:25 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 05:52:25 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 05:52:25 - 用户文件存在,开始读取数据
+2024-08-06 05:52:25 - 读取到用户数据: admin, admin
+2024-08-06 05:52:25 - 从文件加载了 1 条用户记录
+2024-08-06 06:08:30 - 开始保存用户数据到Excel文件: ..\users.xlsx
+2024-08-06 06:08:30 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:08:30 - 文件是否存在: true
+2024-08-06 06:08:30 - 文件是否可写: true
+2024-08-06 06:08:30 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 06:08:30 - 开始验证保存的用户数据
+2024-08-06 06:08:30 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 06:08:30 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:08:30 - 用户文件存在,开始读取数据
+2024-08-06 06:08:30 - 读取到用户数据: admin, admin
+2024-08-06 06:08:30 - 从文件加载了 1 条用户记录
+2024-08-06 06:08:30 - 重新加载的用户数: 1
+2024-08-06 06:08:30 - 原始用户数: 1
+2024-08-06 06:08:30 - 用户数据验证完成
+2024-08-06 06:08:30 - 开始从文件加载用户数据: ..\users.xlsx
+2024-08-06 06:08:30 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:08:30 - 用户文件存在,开始读取数据
+2024-08-06 06:08:30 - 读取到用户数据: admin, admin
+2024-08-06 06:08:30 - 从文件加载了 1 条用户记录
+2024-08-06 06:08:57 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:08:57 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:08:57 - 用户文件存在,开始读取数据
+2024-08-06 06:08:57 - 读取到用户数据: admin, admin
+2024-08-06 06:08:57 - 从文件加载了 1 条用户记录
+2024-08-06 06:09:40 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:09:40 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:09:40 - 文件是否存在: true
+2024-08-06 06:09:40 - 文件是否可写: true
+2024-08-06 06:09:41 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 06:09:41 - 开始验证保存的用户数据
+2024-08-06 06:09:41 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:09:41 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:09:41 - 用户文件存在,开始读取数据
+2024-08-06 06:09:41 - 读取到用户数据: admin, admin
+2024-08-06 06:09:41 - 从文件加载了 1 条用户记录
+2024-08-06 06:09:41 - 重新加载的用户数: 1
+2024-08-06 06:09:41 - 原始用户数: 1
+2024-08-06 06:09:41 - 用户数据验证完成
+2024-08-06 06:09:41 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:09:41 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:09:41 - 用户文件存在,开始读取数据
+2024-08-06 06:09:41 - 读取到用户数据: admin, admin
+2024-08-06 06:09:41 - 从文件加载了 1 条用户记录
+2024-08-06 06:17:59 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:17:59 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:17:59 - 文件是否存在: true
+2024-08-06 06:17:59 - 文件是否可写: true
+2024-08-06 06:18:00 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 06:18:00 - 开始验证保存的用户数据
+2024-08-06 06:18:00 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:18:00 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:18:00 - 用户文件存在,开始读取数据
+2024-08-06 06:18:00 - 读取到用户数据: admin, admin
+2024-08-06 06:18:00 - 从文件加载了 1 条用户记录
+2024-08-06 06:18:00 - 重新加载的用户数: 1
+2024-08-06 06:18:00 - 原始用户数: 1
+2024-08-06 06:18:00 - 用户数据验证完成
+2024-08-06 06:18:00 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:18:00 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:18:00 - 用户文件存在,开始读取数据
+2024-08-06 06:18:00 - 读取到用户数据: admin, admin
+2024-08-06 06:18:00 - 从文件加载了 1 条用户记录
+2024-08-06 06:22:48 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:22:48 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:22:48 - 用户文件存在,开始读取数据
+2024-08-06 06:22:48 - 读取到用户数据: admin, admin
+2024-08-06 06:22:48 - 从文件加载了 1 条用户记录
+2024-08-06 06:23:24 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:24 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:24 - 文件是否存在: true
+2024-08-06 06:23:24 - 文件是否可写: true
+2024-08-06 06:23:24 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 06:23:24 - 开始验证保存的用户数据
+2024-08-06 06:23:24 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:24 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:24 - 用户文件存在,开始读取数据
+2024-08-06 06:23:24 - 读取到用户数据: admin, admin
+2024-08-06 06:23:24 - 从文件加载了 1 条用户记录
+2024-08-06 06:23:24 - 重新加载的用户数: 1
+2024-08-06 06:23:24 - 原始用户数: 1
+2024-08-06 06:23:24 - 用户数据验证完成
+2024-08-06 06:23:24 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:24 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:24 - 用户文件存在,开始读取数据
+2024-08-06 06:23:24 - 读取到用户数据: admin, admin
+2024-08-06 06:23:24 - 从文件加载了 1 条用户记录
+2024-08-06 06:23:33 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:33 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:33 - 文件是否存在: true
+2024-08-06 06:23:33 - 文件是否可写: true
+2024-08-06 06:23:34 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 06:23:34 - 开始验证保存的用户数据
+2024-08-06 06:23:34 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:34 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:34 - 用户文件存在,开始读取数据
+2024-08-06 06:23:34 - 读取到用户数据: admin, admin
+2024-08-06 06:23:34 - 从文件加载了 1 条用户记录
+2024-08-06 06:23:34 - 重新加载的用户数: 1
+2024-08-06 06:23:34 - 原始用户数: 1
+2024-08-06 06:23:34 - 用户数据验证完成
+2024-08-06 06:23:34 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:34 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:23:34 - 用户文件存在,开始读取数据
+2024-08-06 06:23:34 - 读取到用户数据: admin, admin
+2024-08-06 06:23:34 - 从文件加载了 1 条用户记录
+2024-08-06 06:56:47 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:56:47 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 06:56:47 - 用户文件存在,开始读取数据
+2024-08-06 06:56:47 - 读取到用户数据: admin, admin
+2024-08-06 06:56:47 - 从文件加载了 1 条用户记录
+2024-08-06 06:57:21 - 开始保存课程到Excel文件
+2024-08-06 06:57:21 - 课程保存到Excel文件完成
+2024-08-06 07:14:43 - 开始保存课程到Excel文件
+2024-08-06 07:14:44 - 课程保存到Excel文件完成
+2024-08-06 07:15:05 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:15:05 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:15:05 - 用户文件存在,开始读取数据
+2024-08-06 07:15:05 - 读取到用户数据: admin, admin
+2024-08-06 07:15:05 - 从文件加载了 1 条用户记录
+2024-08-06 07:51:45 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:51:45 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:51:45 - 文件是否存在: true
+2024-08-06 07:51:45 - 文件是否可写: true
+2024-08-06 07:51:45 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 07:51:45 - 开始验证保存的用户数据
+2024-08-06 07:51:45 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:51:45 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:51:45 - 用户文件存在,开始读取数据
+2024-08-06 07:51:45 - 读取到用户数据: admin, admin
+2024-08-06 07:51:45 - 从文件加载了 1 条用户记录
+2024-08-06 07:51:45 - 重新加载的用户数: 1
+2024-08-06 07:51:45 - 原始用户数: 1
+2024-08-06 07:51:45 - 用户数据验证完成
+2024-08-06 07:51:45 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:51:45 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:51:45 - 用户文件存在,开始读取数据
+2024-08-06 07:51:45 - 读取到用户数据: admin, admin
+2024-08-06 07:51:45 - 从文件加载了 1 条用户记录
+2024-08-06 07:52:13 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:52:13 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 07:52:13 - 用户文件存在,开始读取数据
+2024-08-06 07:52:13 - 读取到用户数据: admin, admin
+2024-08-06 07:52:13 - 从文件加载了 1 条用户记录
+2024-08-06 08:12:55 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:12:55 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:12:55 - 用户文件存在,开始读取数据
+2024-08-06 08:12:55 - 读取到用户数据: admin, admin
+2024-08-06 08:12:55 - 从文件加载了 1 条用户记录
+2024-08-06 08:14:39 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:14:39 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:14:39 - 用户文件不存在: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:17:09 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:17:09 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:17:09 - 文件是否存在: false
+2024-08-06 08:17:09 - 文件是否可写: false
+2024-08-06 08:17:09 - 用户数据保存成功,共保存 1 条记录
+2024-08-06 08:17:09 - 开始验证保存的用户数据
+2024-08-06 08:17:09 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:17:09 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:17:09 - 用户文件存在,开始读取数据
+2024-08-06 08:17:09 - 读取到用户数据: admin_test, admin
+2024-08-06 08:17:09 - 从文件加载了 1 条用户记录
+2024-08-06 08:17:09 - 重新加载的用户数: 1
+2024-08-06 08:17:09 - 原始用户数: 1
+2024-08-06 08:17:09 - 用户数据验证完成
+2024-08-06 08:17:09 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:17:09 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\..\users.xlsx
+2024-08-06 08:17:09 - 用户文件存在,开始读取数据
+2024-08-06 08:17:09 - 读取到用户数据: admin_test, admin
+2024-08-06 08:17:09 - 从文件加载了 1 条用户记录
+2024-08-06 08:18:26 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:18:26 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:18:26 - 用户文件存在,开始读取数据
+2024-08-06 08:18:26 - 读取到用户数据: admin_test, admin
+2024-08-06 08:18:26 - 读取到用户数据: user, user
+2024-08-06 08:18:26 - 从文件加载了 2 条用户记录
+2024-08-06 08:25:53 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:25:53 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:25:53 - 用户文件存在,开始读取数据
+2024-08-06 08:25:53 - 读取到用户数据: admin_test, admin
+2024-08-06 08:25:53 - 读取到用户数据: user, user
+2024-08-06 08:25:53 - 从文件加载了 2 条用户记录
+2024-08-06 08:30:32 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:30:32 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:30:32 - 用户文件存在,开始读取数据
+2024-08-06 08:30:32 - 读取到用户数据: admin_test, admin
+2024-08-06 08:30:32 - 读取到用户数据: user, user
+2024-08-06 08:30:32 - 从文件加载了 2 条用户记录
+2024-08-06 08:32:51 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:32:51 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:32:51 - 用户文件存在,开始读取数据
+2024-08-06 08:32:51 - 读取到用户数据: admin_test, admin
+2024-08-06 08:32:51 - 读取到用户数据: user, user
+2024-08-06 08:32:51 - 从文件加载了 2 条用户记录
+2024-08-06 08:39:22 - 开始保存课程到Excel文件
+2024-08-06 08:39:23 - 课程保存到Excel文件完成
+2024-08-06 08:39:32 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:32 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:32 - 文件是否存在: true
+2024-08-06 08:39:32 - 文件是否可写: true
+2024-08-06 08:39:32 - 用户数据保存成功,共保存 2 条记录
+2024-08-06 08:39:32 - 开始验证保存的用户数据
+2024-08-06 08:39:32 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:32 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:32 - 用户文件存在,开始读取数据
+2024-08-06 08:39:32 - 读取到用户数据: admin_test, admin
+2024-08-06 08:39:32 - 读取到用户数据: user, user
+2024-08-06 08:39:32 - 从文件加载了 2 条用户记录
+2024-08-06 08:39:32 - 重新加载的用户数: 2
+2024-08-06 08:39:32 - 原始用户数: 2
+2024-08-06 08:39:32 - 用户数据验证完成
+2024-08-06 08:39:32 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:32 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:32 - 用户文件存在,开始读取数据
+2024-08-06 08:39:32 - 读取到用户数据: admin_test, admin
+2024-08-06 08:39:32 - 读取到用户数据: user, user
+2024-08-06 08:39:32 - 从文件加载了 2 条用户记录
+2024-08-06 08:39:45 - 开始保存用户数据到Excel文件: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:45 - 文件路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:45 - 文件是否存在: true
+2024-08-06 08:39:45 - 文件是否可写: true
+2024-08-06 08:39:45 - 用户数据保存成功,共保存 2 条记录
+2024-08-06 08:39:45 - 开始验证保存的用户数据
+2024-08-06 08:39:45 - 开始从文件加载用户数据: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:45 - 文件绝对路径: C:\Users\GeekGuru\Downloads\Compressed\StudentSystem\users.xlsx
+2024-08-06 08:39:45 - 用户文件存在,开始读取数据
+2024-08-06 08:39:45 - 读取到用户数据: admin_test, admin
+2024-08-06 08:39:45 - 读取到用户数据: user, user
+2024-08-06 08:39:45 - 从文件加载了 2 条用户记录
+2024-08-06 08:39:45 - 重新加载的用户数: 2
+2024-08-06 08:39:45 - 原始用户数: 2
+2024-08-06 08:39:45 - 用户数据验证完成
